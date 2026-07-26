@@ -142,15 +142,15 @@ value0(5, 3, 1)
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: Print many times
-'''
+
 def value0(x, y):
-    value1 = -1
+    value1 = 0
     while value1 != y:
         print(x)
         value1 += 1
 
 value0("Hi", 5)
-'''
+
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: A square of hashes
