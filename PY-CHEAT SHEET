@@ -1,0 +1,21 @@
+# PRINTS VALUE0 AND VALUE1 NEXT TO EACH OTHER
+print(value0, end = "")
+print(value1)
+000000000000000000000000000000000000000000000000000000000000000000000000000
+#PRINTS TRUE
+value0 = "information"
+value1 = "info" in value0
+
+value0 = "information"
+value1 = value0[0:11]
+
+value2 = value0.find(value to find, start, end)
+000000000000000000000000000000000000000000000000000000000000000000000000000
+#CONDITIONS INSIDE VARIABLES
+# ex.
+value0 = True
+if value0:
+     print("This is true")
+000000000000000000000000000000000000000000000000000000000000000000000000000
+def value0(value1):
+     print("information ", value1)
