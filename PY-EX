@@ -1,0 +1,314 @@
+#EXAMPLES
+
+
+# https://programming-26.mooc.fi/part-2/2-else-elif
+# Programming exercise: Alphabetically Last
+'''
+value0 = input("Please type in the first word: ")
+value1 = input("Please type in the second word: ")
+
+if value0 == value1:
+    print("You typed the same word.")
+elif value0 < value1:
+    print(f"{value0} comes first before {value1}.")
+else:
+    print(f"{value0} comes after {value1}.")
+'''
+
+# https://programming-26.mooc.fi/part-2/3-combining-conditions
+# Programming exercise: Alphabetically in the middle
+'''
+value0 = input("First letter: ")
+value1 = input("Second letter: ")
+value2 = input("Third letter: ")
+
+if value0 > value1:
+    if value0 < value2:
+        print(f"{value0} is the middle letter.")
+    else:
+        if value1 > value2:
+            print(f"{value1} is the middle letter")
+        else:
+            print(f"{value2} is the middle letter.")
+elif value1 > value0:
+    if value1 < value2:
+        print(f"{value1} is the middle letter.")
+    else:
+        if value2 > value0:
+            print(f"{value2} is the middle letter.")
+        else:
+            print(f"{value0} is the middle letter.")
+'''
+
+# https://programming-26.mooc.fi/part-3/2-working-with-strings
+# Programming exercise: Find all the substrings
+'''
+value0 = input("Please type in a word: ")
+value1 = input("Please type in a character: ")
+
+while True:
+    if value1 in value0:
+        value2 = value0.find(value1)
+        print(value0[value2:value2 + 3])
+        value0 = value0[value2 + 1:]
+    else:
+        break
+'''
+
+# https://programming-26.mooc.fi/part-3/2-working-with-strings
+# Programming exercise: The second occurrence
+'''
+value0 = input("Please type in a word: ")
+value1 = input("Please input a character: ")
+value2 = value0.find(value1)
+
+if value2 != -1:
+    value3 = value0.find(value1, value2)
+    print(f"The first {value1} is at index {value3}", end = "")
+    if value3 != -1:
+        value4 = value0.find(value1, value3 + len(value1))
+    print(f" while the first {value1} is at index {value4}.")
+'''
+
+# https://programming-26.mooc.fi/part-3/3-more-loops
+# Programming exercise: First letters of words
+'''
+value0 = input("Please type in a sentence: ")
+
+for value1 in value0.split():
+    print(value1[0])
+'''
+# OR
+'''
+value0 = input("Please type in a sentence: ")
+
+value1 = value0
+
+while value1 != "":
+    if value1[0] != " ":
+        print(value1[0])
+
+    if " " in value1:
+        value2 = value1.find(" ")
+        value1 = value1[value2 + 1:]
+    else:
+        value1 = ""
+'''
+
+# https://programming-26.mooc.fi/part-3/3-more-loops
+# Programming exercise: Factorial
+'''
+value0 = 1
+
+while True:
+    value0 = int(input("Please type in a number: "))
+    if value0 == -1 or value0 == 0:
+        break
+    value1 = 1
+    value2 = 1
+    while True:
+        if value1 != value0:
+            value2 *= value1 + 1
+            value1 += 1
+        else:
+            break
+    print(f"The factorial of number {value1} is {value2}")
+
+print("Thanks and goodbye!")
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+# Programming exercise: The first character
+'''
+def value0(text):
+    print(text[0])
+
+value0('python')
+value0('yellow')
+value0('tomorrow')
+value0('heliotrope')
+value0('open')
+value0('night')
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+# Programming exercise: Mean
+'''
+def value0(x, y, z):
+    print((x * y * z) / 3)
+
+value0(5, 3, 1)
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+# Programming exercise: Print many times
+'''
+def value0(x, y):
+    value1 = -1
+    while value1 != y:
+        print(x)
+        value1 += 1
+
+value0("Hi", 5)
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+# Programming exercise: A square of hashes
+'''
+def value0(x):
+    value2 = 0
+    while value2!= x:
+        value2 += 1
+        value1 = 0
+        while value1 != x:
+            print("#", end = "")
+            value1 += 1
+            if value1 == x:
+                print(" ")
+value0(5)
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+#
+'''
+def value0(x):
+    value2 = -1
+    while value2 != x - 1:
+        value2 += 1
+        value1 = -1
+        while value1 != x:
+            value1 += 1
+            if value1 == x:
+                print("")
+            else:
+                print((value2 + value1 + 1) % 2, end = "")
+
+value0(3)
+print()
+value0(6)
+'''
+
+# https://programming-26.mooc.fi/part-3/4-defining-functions
+#
+'''
+def value0(x, y):
+    value3 = len(x)
+    value2 = -1
+    while value2 != y - 1:
+        value2 += 1
+        value1 = -1
+        value4 = (value2 * y) % value3
+        while value1 != y:
+            value1 += 1
+            if value1 == y:
+                print("")
+            else:
+                print(x[(value4 + value1) % value3], end = "")
+
+value0("ab", 3)
+print()
+value0("aybabtu", 5)
+'''
+
+# https://programming-26.mooc.fi/part-4/2-more-functions
+# Programming exercise: A box of hashes
+'''
+def print_row():
+    row0 = 0
+    while row0 != 10:
+        print("A", end = "")
+        row0 += 1
+        if row0 == 10:
+            print(" ")
+
+def table(x):
+    table0 = 0
+    while table0 != x:
+        table0 += 1
+        print_row()
+        
+table(3)
+'''
+
+# https://programming-26.mooc.fi/part-4/2-more-functions
+#Programming exercise: A square of hashes
+'''
+def print_row(x):
+    row0 = 0
+    while row0 != x:
+        print("O", end = "")
+        row0 += 1
+        if row0 == x:
+            print(" ")
+
+def table(x):
+    table0 = 0
+    while table0 != x:
+        table0 += 1
+        print_row(x)
+table(5)
+'''
+
+# https://programming-26.mooc.fi/part-4/2-more-functions
+# Programming exercise A square
+'''
+def print_row(x, y):
+    row0 = 0
+    while row0 != y:
+        print(x, end = "")
+        row0 += 1
+        if row0 == y:
+            print(" ")
+
+def table(x, y):
+    table0 = 0
+    while table0 != y:
+        table0 += 1
+        print_row(x, y)
+
+table("O", 3)
+'''
+
+# https://programming-26.mooc.fi/part-4/2-more-functions
+#
+'''
+def row0 (a, b):
+    print(a * b)
+
+def table0(a, b):
+    table00 = 1
+    while table00 <= b:
+        row0(a, table00)
+        row00 += 1
+row0("O", 5)
+'''
+
+#
+#
+'''
+def row0 (a, b):
+    print(a * b)
+
+def table0(a, b):
+    table00 = 1
+    while table00 <= b:
+        row0(a, table00)
+        table00 += 1
+
+def row1(c, d):
+    row11 = 0
+    while row11 != d:
+        print(c, end = "")
+        row11 += 1
+        if row11 == d:
+            print("")
+
+def table1(c, d):
+    table11 = 0
+    while table11 != d:
+        table11 += 1
+        row1(c, d)
+
+table0("0", 5)
+table1("1", 5 )
+'''
