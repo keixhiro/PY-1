@@ -142,7 +142,7 @@ value0(5, 3, 1)
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: Print many times
-
+'''
 def value0(x, y):
     value1 = 0
     while value1 != y:
@@ -150,18 +150,17 @@ def value0(x, y):
         value1 += 1
 
 value0("Hi", 5)
-
+'''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-# Programming exercise: A square of hashes
 '''
 def value0(x):
     value2 = 0
-    while value2!= x:
+    while value2 != x:
         value2 += 1
         value1 = 0
         while value1 != x:
-            print("#", end = "")
+            print("L", end = "")
             value1 += 1
             if value1 == x:
                 print(" ")
@@ -226,7 +225,7 @@ def table(x):
     while table0 != x:
         table0 += 1
         print_row()
-        
+
 table(3)
 '''
 
@@ -271,17 +270,17 @@ table("O", 3)
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 #
-'''
-def row0 (a, b):
+
+def row0(a, b):
     print(a * b)
 
 def table0(a, b):
     table00 = 1
     while table00 <= b:
         row0(a, table00)
-        row00 += 1
-row0("O", 5)
-'''
+        table00 += 1
+table0("O", 5)
+
 
 #
 #
