@@ -153,6 +153,7 @@ value0("Hi", 5)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
+# Programming exercise: A square of hashes
 '''
 def value0(x):
     value2 = 0
@@ -160,7 +161,7 @@ def value0(x):
         value2 += 1
         value1 = 0
         while value1 != x:
-            print("L", end = "")
+            print("#", end = "")
             value1 += 1
             if value1 == x:
                 print(" ")
@@ -168,7 +169,7 @@ value0(5)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-#
+# Programming exercise: Chessboard
 '''
 def value0(x):
     value2 = -1
@@ -188,7 +189,7 @@ value0(6)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-#
+# Programming exercise: A word squared
 '''
 def value0(x, y):
     value3 = len(x)
@@ -215,7 +216,7 @@ value0("aybabtu", 5)
 def print_row():
     row0 = 0
     while row0 != 10:
-        print("A", end = "")
+        print("#", end = "")
         row0 += 1
         if row0 == 10:
             print(" ")
@@ -235,7 +236,7 @@ table(3)
 def print_row(x):
     row0 = 0
     while row0 != x:
-        print("O", end = "")
+        print("#", end = "")
         row0 += 1
         if row0 == x:
             print(" ")
@@ -269,8 +270,8 @@ table("O", 3)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
-#
-
+# Programming exercise: A triangle
+'''
 def row0(a, b):
     print(a * b)
 
@@ -280,10 +281,10 @@ def table0(a, b):
         row0(a, table00)
         table00 += 1
 table0("O", 5)
+'''
 
-
-#
-#
+# https://programming-26.mooc.fi/part-4/2-more-functions
+# Programming exercise: A shape
 '''
 def row0 (a, b):
     print(a * b)
