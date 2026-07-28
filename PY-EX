@@ -285,17 +285,11 @@ table0("O", 5)
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A shape
-'''
-def row0 (a, b):
-    print(a * b)
 
-def table0(a, b):
-    table00 = 1
-    while table00 <= b:
-        row0(a, table00)
-        table00 += 1
-
-def row1(c, d):
+def row0 (a, b, c, d):
+    if a != 0:
+        print(a * b)
+    
     row11 = 0
     while row11 != d:
         print(c, end = "")
@@ -303,12 +297,17 @@ def row1(c, d):
         if row11 == d:
             print("")
 
-def table1(c, d):
+
+def table0(a, b, c, d):
+    table00 = 1
+    while table00 <= b:
+        row0(a, table00, 0, 0)
+        table00 += 1
+    
     table11 = 0
     while table11 != d:
         table11 += 1
-        row1(c, d)
+        row0(0, 0, c, d)
+    
+table0("0", 5, "1", 5)
 
-table0("0", 5)
-table1("1", 5 )
-'''
