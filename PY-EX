@@ -63,11 +63,10 @@ value1 = input("Please input a character: ")
 value2 = value0.find(value1)
 
 if value2 != -1:
-    value3 = value0.find(value1, value2)
-    print(f"The first {value1} is at index {value3}", end = "")
-    if value3 != -1:
-        value4 = value0.find(value1, value3 + len(value1))
-    print(f" while the first {value1} is at index {value4}.")
+    print(f"The first {value1} is at index {value2}", end = "")
+    if value2 != -1:
+        value3 = value0.find(value1, value2 + len(value1))
+    print(f" while the second {value1} is at index {value3}.")
 '''
 
 # https://programming-26.mooc.fi/part-3/3-more-loops
