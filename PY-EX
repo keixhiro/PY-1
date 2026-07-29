@@ -149,7 +149,7 @@ def value0(x, y):
         print(x)
         value1 += 1
 
-value0("Hi", 5)
+value0("Yo", 5)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
@@ -312,8 +312,8 @@ def table0(a, b, c, d):
 table0("0", 5, "1", 5)
 '''
 
-# 
-#
+# https://programming-26.mooc.fi/part-4/2-more-functions
+# Programming exercise: A spruce
 '''
 def table0(a):
     print("look, a spruce!")
@@ -326,3 +326,4 @@ def table0(a):
     print(" " * a + "*")
 
 table0(5)
+'''
