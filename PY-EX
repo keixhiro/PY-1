@@ -210,7 +210,7 @@ value0("aybabtu", 5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
-# Programming exercise: A box of hashes
+# Programming exercise: A BOX OF HASHES
 '''
 def print_row():
     row0 = 0
@@ -326,4 +326,3 @@ def table0(a):
 
 table0(5)
 '''
-
