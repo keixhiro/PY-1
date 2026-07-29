@@ -63,10 +63,11 @@ value1 = input("Please input a character: ")
 value2 = value0.find(value1)
 
 if value2 != -1:
-    print(f"The first {value1} is at index {value2}", end = "")
-    if value2 != -1:
-        value3 = value0.find(value1, value2 + len(value1))
-    print(f" while the second {value1} is at index {value3}.")
+    value3 = value0.find(value1, value2)
+    print(f"The first {value1} is at index {value3}", end = "")
+    if value3 != -1:
+        value4 = value0.find(value1, value3 + len(value1))
+    print(f" while the first {value1} is at index {value4}.")
 '''
 
 # https://programming-26.mooc.fi/part-3/3-more-loops
@@ -148,7 +149,7 @@ def value0(x, y):
         print(x)
         value1 += 1
 
-value0("Yo", 5)
+value0("Hi", 5)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
@@ -284,9 +285,9 @@ table0("O", 5)
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A shape
-'''
+
 def row0 (a, b, c, d):
-    if b != 0:
+    if a != 0:
         print(a * b)
     
     row11 = 0
@@ -298,31 +299,15 @@ def row0 (a, b, c, d):
 
 
 def table0(a, b, c, d):
-    table00 = 0
+    table00 = 1
     while table00 <= b:
-        row0(a, table00, c, 0)
+        row0(a, table00, 0, 0)
         table00 += 1
     
     table11 = 0
     while table11 != d:
         table11 += 1
-        row0(a, 0, c, d)
+        row0(0, 0, c, d)
     
 table0("0", 5, "1", 5)
-'''
 
-# https://programming-26.mooc.fi/part-4/2-more-functions
-# Programming exercise: A spruce
-'''
-def table0(a):
-    print("look, a spruce!")
-    b = a
-    row0 = "*"
-    while b > 0:
-        print(" " * b + row0)
-        row0 += "**"
-        b -= 1
-    print(" " * a + "*")
-
-table0(5)
-'''
