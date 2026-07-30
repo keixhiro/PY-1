@@ -210,11 +210,11 @@ value0("aybabtu", 5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
-# Programming exercise: A BOX OF HASHES
-'''
+# Programming exercise: A box of hashes
+
 def print_row():
     row0 = 0
-    while row0 != 10:
+    while row0 < 10:
         print("#", end = "")
         row0 += 1
         if row0 == 10:
@@ -222,12 +222,12 @@ def print_row():
 
 def table(x):
     table0 = 0
-    while table0 != x:
-        table0 += 1
+    while table0 < x:
         print_row()
+        table0 += 1
 
 table(3)
-'''
+
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 #Programming exercise: A square of hashes
