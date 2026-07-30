@@ -326,4 +326,3 @@ def table0(a):
 
 table0(5)
 '''
-
