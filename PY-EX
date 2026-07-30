@@ -265,7 +265,7 @@ def table(x, y):
         table0 += 1
         print_row(x, y)
 
-table("O", 3)
+table("#", 3)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
@@ -279,7 +279,7 @@ def table0(a, b):
     while table00 <= b:
         row0(a, table00)
         table00 += 1
-table0("O", 5)
+table0("0", 5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
@@ -326,3 +326,5 @@ def table0(a):
 
 table0(5)
 '''
+
+hey
