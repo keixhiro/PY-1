@@ -141,7 +141,7 @@ while sent != "":
         find_sent = sent.find(" ")
         sent = sent[find_sent + 1:]
     else:
-        value1 = ""
+        sent = ""
 '''
 
 # https://programming-26.mooc.fi/part-3/3-more-loops
