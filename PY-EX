@@ -191,29 +191,29 @@ mean(1, 2, 3)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-# Programming exercise: PRINT MANY TIMES
+# Programming exercise: Print manya times
 '''
-def value0(x, y):
-    value1 = 0
-    while value1 != y:
+def pri_many(x, y):
+    hel = 0
+    while hel != y:
         print(x)
-        value1 += 1
+        hel += 1
 
-value0("Yo", 3)
+pri_many("Yo", 3)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: A square of hashes
 '''
-def value0(x):
-    value2 = 0
-    while value2 != x:
-        value2 += 1
-        value1 = 0
-        while value1 != x:
+def squa_hash(x):
+    hel2 = 0
+    while hel2 != x:
+        hel2 += 1
+        hel1 = 0
+        while hel1 != x:
             print("#", end = "")
-            value1 += 1
-            if value1 == x:
+            hel1 += 1
+            if hel1 == x:
                 print(" ")
 value0(5)
 '''
@@ -241,7 +241,7 @@ value0(6)
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: A word squared
 '''
-def value0(x, y):
+def squa_wor(x, y):
     value3 = len(x)
     value2 = -1
     while value2 != y - 1:
