@@ -4,55 +4,55 @@
 # https://programming-26.mooc.fi/part-2/2-else-elif
 # Programming exercise: Alphabetically Last
 '''
-value0 = input("Please type in the first word: ")
-value1 = input("Please type in the second word: ")
+firs_wor = input("Please type in the first word: ")
+seco_wor = input("Please type in the second word: ")
 
-if value0 == value1:
+if firs_wor == seco_wor:
     print("You typed the same word.")
-elif value0 < value1:
-    print(f"{value0} comes first before {value1}.")
+elif firs_wor < seco_wor:
+    print(f"{firs_wor} comes first before {seco_wor}.")
 else:
-    print(f"{value0} comes after {value1}.")
+    print(f"{firs_wor} comes after {seco_wor}.")
 '''
 
 # https://programming-26.mooc.fi/part-2/3-combining-conditions
 # Programming exercise: Alphabetically in the middle
 '''
-value0 = input("First letter: ")
-value1 = input("Second letter: ")
-value2 = input("Third letter: ")
+a = input("First letter: ")
+b = input("Second letter: ")
+c = input("Third letter: ")
 
-if value0 > value1:
-    if value0 < value2:
-        print(f"{value0} is the middle letter.")
+if a > b:
+    if a < c:
+        print(f"{a} is the middle letter.")
     else:
-        if value1 > value2:
-            print(f"{value1} is the middle letter")
+        if b > c:
+            print(f"{b} is the middle letter")
         else:
-            print(f"{value2} is the middle letter.")
-elif value1 > value0:
-    if value1 < value2:
-        print(f"{value1} is the middle letter.")
+            print(f"{c} is the middle letter.")
+elif b > a:
+    if b < c:
+        print(f"{b} is the middle letter.")
     else:
-        if value2 > value0:
-            print(f"{value2} is the middle letter.")
+        if c > a:
+            print(f"{c} is the middle letter.")
         else:
-            print(f"{value0} is the middle letter.")
+            print(f"{a} is the middle letter.")
 '''
 
 # https://programming-26.mooc.fi/part-2/4-simple-loops
 # Programming exercise: PIN and number of attempts
 '''
 def_pin = 4321
-att = 0
+atte = 0
 pin = 0
 while def_pin != pin:
     pin = int(input("PIN: "))
-    att += 1
-    if def_pin == pin and att == 1:
+    atte += 1
+    if def_pin == pin and atte == 1:
         print("Congrats! You got it right after one attempt.")
     elif def_pin == pin:
-        print(f"You got it correctly after {att} attempts.")
+        print(f"You got it correctly after {atte} attempts.")
     else:
         print("Please try again.")
 '''
@@ -62,47 +62,47 @@ while def_pin != pin:
 '''
 year = int(input("Year: "))
 
-next_year = year + 1
+leap_year = yea + 1
 
 while True:
-    if (next_year % 4 == 0):
-        print("The next leap year after", year, "is", next_year)
+    if (nex_year % 4 == 0):
+        print("The next leap year after", year, "is", leap_year)
         break
 
-    next_year += 1
+    leap_year += 1
 '''
 
-#
-#
-
-
-sen = ""
+# https://programming-26.mooc.fi/part-2/4-simple-loops
+# Programming exercise: Story
+'''
+sent = ""
+prev_wor = ""
 while True:
-    if wor == "end":
+    wor = input("Please type in a word: ")
+    
+    if wor == "end" or wor == prev_wor:
         break
 
-    wor = input("Please typ: ")
-    if sen == "":
-        wor = sen
+    if sent == "":
+        sent = wor
     else:
-        sen += " " + wor
+        sent += " " + wor
     
-
-
-
-
+    prev_wor = wor
+print(sent)
+'''
 
 # https://programming-26.mooc.fi/part-3/2-working-with-strings
 # Programming exercise: Find all the substrings
 '''
-value0 = input("Please type in a word: ")
-value1 = input("Please type in a character: ")
+wor = input("Please type in a word: ")
+char = input("Please type in a character: ")
 
 while True:
-    if value1 in value0:
-        value2 = value0.find(value1)
-        print(value0[value2:value2 + 3])
-        value0 = value0[value2 + 1:]
+    if char in wor:
+        find_char = wor.find(char)
+        print(wor[find_char:find_char + 3])
+        wor = wor[find_char + 1:]
     else:
         break
 '''
@@ -110,38 +110,36 @@ while True:
 # https://programming-26.mooc.fi/part-3/2-working-with-strings
 # Programming exercise: The second occurrence
 '''
-value0 = input("Please type in a word: ")
-value1 = input("Please input a character: ")
-value2 = value0.find(value1)
+wor = input("Please type in a word: ")
+char = input("Please input a character: ")
+find_char = wor.find(char)
 
-if value2 != -1:
-    print(f"The first {value1} is at index {value2}", end = "")
-    if value2 != -1:
-        value3 = value0.find(value1, value2 + len(value1))
-    print(f" while the second {value1} is at index {value3}.")
+if find_char != -1:
+    print(f"The first {char} is at index {find_char}", end = "")
+    if find_char != -1:
+        find_char1 = wor.find(char, find_char + len(char))
+    print(f" while the second {char} is at index {find_char1}.")
 '''
 
 # https://programming-26.mooc.fi/part-3/3-more-loops
 # Programming exercise: First letters of words
 '''
-value0 = input("Please type in a sentence: ")
+sent = input("Please type in a sentence: ")
 
-for value1 in value0.split():
-    print(value1[0])
+for firs_let in sent.split():
+    print(firs_let[0])
 '''
 # OR
 '''
-value0 = input("Please type in a sentence: ")
+sent = input("Please type in a sentence: ")
 
-value1 = value0
+while sent != "":
+    if sent[0] != " ":
+        print(sent[0])
 
-while value1 != "":
-    if value1[0] != " ":
-        print(value1[0])
-
-    if " " in value1:
-        value2 = value1.find(" ")
-        value1 = value1[value2 + 1:]
+    if " " in sent:
+        find_sent = sent.find(" ")
+        sent = sent[find_sent + 1:]
     else:
         value1 = ""
 '''
@@ -168,31 +166,32 @@ while True:
 print("Thanks and goodbye!")
 '''
 
+# PROPER PROPER PROPER
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: The first character
 '''
-def value0(text):
-    print(text[0])
+def char(wor):
+    print(wor[0])
 
-value0('python')
-value0('yellow')
-value0('tomorrow')
-value0('heliotrope')
-value0('open')
-value0('night')
+char('python')
+char('yellow')
+char('tomorrow')
+char('heliotrope')
+char('open')
+char('night')
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: Mean
 '''
-def value0(x, y, z):
+def mean(x, y, z):
     print((x * y * z) / 3)
 
-value0(1, 2, 3)
+mean(1, 2, 3)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-# Programming exercise: Print many times
+# Programming exercise: PRINT MANY TIMES
 '''
 def value0(x, y):
     value1 = 0
