@@ -40,6 +40,58 @@ elif value1 > value0:
             print(f"{value0} is the middle letter.")
 '''
 
+# https://programming-26.mooc.fi/part-2/4-simple-loops
+# Programming exercise: PIN and number of attempts
+'''
+def_pin = 4321
+att = 0
+pin = 0
+while def_pin != pin:
+    pin = int(input("PIN: "))
+    att += 1
+    if def_pin == pin and att == 1:
+        print("Congrats! You got it right after one attempt.")
+    elif def_pin == pin:
+        print(f"You got it correctly after {att} attempts.")
+    else:
+        print("Please try again.")
+'''
+
+# https://programming-26.mooc.fi/part-2/4-simple-loops
+# Programming exercise: The next leap year
+'''
+year = int(input("Year: "))
+
+next_year = year + 1
+
+while True:
+    if (next_year % 4 == 0):
+        print("The next leap year after", year, "is", next_year)
+        break
+
+    next_year += 1
+'''
+
+#
+#
+
+
+sen = ""
+while True:
+    if wor == "end":
+        break
+
+    wor = input("Please typ: ")
+    if sen == "":
+        wor = sen
+    else:
+        sen += " " + wor
+    
+
+
+
+
+
 # https://programming-26.mooc.fi/part-3/2-working-with-strings
 # Programming exercise: Find all the substrings
 '''
