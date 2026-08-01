@@ -4,15 +4,15 @@
 # https://programming-26.mooc.fi/part-2/2-else-elif
 # Programming exercise: Alphabetically Last
 '''
-firs_wor = input("Please type in the first word: ")
-seco_wor = input("Please type in the second word: ")
+fir_wor = input("Please type in the first word: ")
+sec_wor = input("Please type in the second word: ")
 
-if firs_wor == seco_wor:
+if fir_wor == sec_wor:
     print("You typed the same word.")
-elif firs_wor < seco_wor:
-    print(f"{firs_wor} comes first before {seco_wor}.")
+elif fir_wor < sec_wor:
+    print(f"{fir_wor} comes first before {sec_wor}.")
 else:
-    print(f"{firs_wor} comes after {seco_wor}.")
+    print(f"{fir_wor} comes after {sec_wor}.")
 '''
 
 # https://programming-26.mooc.fi/part-2/3-combining-conditions
@@ -126,8 +126,8 @@ if find_char != -1:
 '''
 sent = input("Please type in a sentence: ")
 
-for firs_let in sent.split():
-    print(firs_let[0])
+for fir_let in sent.split():
+    print(fir_let[0])
 '''
 # OR
 '''
@@ -191,13 +191,13 @@ mean(1, 2, 3)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
-# Programming exercise: Print manya times
+# Programming exercise: Print many times
 '''
 def pri_many(x, y):
-    hel = 0
-    while hel != y:
+    help = 0
+    while help != y:
         print(x)
-        hel += 1
+        help += 1
 
 pri_many("Yo", 3)
 '''
@@ -206,16 +206,16 @@ pri_many("Yo", 3)
 # Programming exercise: A square of hashes
 '''
 def squa_hash(x):
-    hel2 = 0
-    while hel2 != x:
-        hel2 += 1
-        hel1 = 0
-        while hel1 != x:
+    table1 = 0
+    while table1 != x:
+        table1 += 1
+        row1 = 0
+        while row1 != x:
             print("#", end = "")
-            hel1 += 1
-            if hel1 == x:
+            row1 += 1
+            if row1 == x:
                 print(" ")
-value0(5)
+squa_hash(5)
 '''
 
 # https://programming-26.mooc.fi/part-3/4-defining-functions
@@ -241,7 +241,7 @@ value0(6)
 # https://programming-26.mooc.fi/part-3/4-defining-functions
 # Programming exercise: A word squared
 '''
-def squa_wor(x, y):
+def value0(x, y):
     value3 = len(x)
     value2 = -1
     while value2 != y - 1:
@@ -263,140 +263,140 @@ value0("aybabtu", 5)
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A box of hashes
 '''
-def print_row():
-    row0 = 0
-    while row0 < 10:
+def pri_row():
+    row1 = 0
+    while row1 < 10:
         print("#", end = "")
-        row0 += 1
-        if row0 == 10:
+        row1 += 1
+        if row1 == 10:
             print(" ")
 
-def table(x):
-    table0 = 0
-    while table0 < x:
-        print_row()
-        table0 += 1
+def box_hash(x):
+    table1 = 0
+    while table1 < x:
+        pri_row()
+        table1 += 1
 
-table(3)
+box_hash(3)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 #Programming exercise: A square of hashes
 '''
-def print_row(x):
-    row0 = 0
-    while row0 != x:
+def pri_row(x):
+    row1 = 0
+    while row1 != x:
         print("#", end = "")
-        row0 += 1
-        if row0 == x:
+        row1 += 1
+        if row1 == x:
             print(" ")
 
-def table(x):
-    table0 = 0
-    while table0 != x:
-        table0 += 1
-        print_row(x)
-table(5)
+def squa_hash(x):
+    table1 = 0
+    while table1 != x:
+        table1 += 1
+        pri_row(x)
+squa_hash(5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise A square
 '''
-def print_row(x, y):
-    row0 = 0
-    while row0 != y:
+def pri_row(x, y):
+    row1 = 0
+    while row1 != y:
         print(x, end = "")
-        row0 += 1
-        if row0 == y:
+        row1 += 1
+        if row1 == y:
             print(" ")
 
-def table(x, y):
-    table0 = 0
-    while table0 != y:
-        table0 += 1
-        print_row(x, y)
+def squa(x, y):
+    table1 = 0
+    while table1 != y:
+        table1 += 1
+        pri_row(x, y)
 
-table("#", 3)
+squa("#", 3)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A triangle
 '''
-def row0(a, b):
+def pri_row(a, b):
     print(a * b)
 
-def table0(a, b):
-    table00 = 1
-    while table00 <= b:
-        row0(a, table00)
-        table00 += 1
-table0("0", 5)
+def tria(a, b):
+    table1 = 1
+    while table1 <= b:
+        pri_row(a, table00)
+        table1 += 1
+tria("0", 5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A shape
 '''
-def row0 (a, b, c, d):
+def pri_rows (a, b, c, d):
     if b != 0:
         print(a * b)
     
-    row11 = 0
-    while row11 != d:
+    row2 = 0
+    while row2 != d:
         print(c, end = "")
-        row11 += 1
-        if row11 == d:
+        row2 += 1
+        if row2 == d:
             print("")
 
 
-def table0(a, b, c, d):
-    table00 = 0
-    while table00 <= b:
-        row0(a, table00, c, 0)
-        table00 += 1
+def shape(a, b, c, d):
+    table1 = 0
+    while table1 <= b:
+        pri_rows(a, table1, c, 0)
+        table1 += 1
     
-    table11 = 0
-    while table11 != d:
-        table11 += 1
-        row0(a, 0, c, d)
+    table2 = 0
+    while table2 != d:
+        table2 += 1
+        pri_rows(a, 0, c, d)
     
-table0("0", 3, "1", 3)
+shape("0", 3, "1", 3)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: A spruce
 '''
-def table0(a):
+def spr(a):
     print("look, a spruce!")
     b = a
-    row0 = "*"
+    row1 = "*"
     while b > 0:
         print(" " * b + row0)
-        row0 += "**"
+        row1 += "**"
         b -= 1
     print(" " * a + "*")
 
-table0(5)
+spr(5)
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: The greatest number
 '''
-def num0(a, b, c):
+def num(a, b, c):
     if a > b and a > c:
         return a
     elif b > a and b > c:
         return b
     else:
         return c
-print(num0(1, 2, 3))
-print(num0(3, 2, 1))
-print(num0(1, 3, 2))
+print(num(1, 2, 3))
+print(num(3, 2, 1))
+print(num(1, 3, 2))
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: Same characters
 '''
-def str_num0(a, b, c):
+def same_char(a, b, c):
     try:
         if a[b] == a[c]:
             return True
@@ -405,53 +405,103 @@ def str_num0(a, b, c):
     except IndexError:
         return False
 
-print(str_num0("programmer", 6, 7))
-print(str_num0("programmer", 0, 4))
-print(str_num0("programmer", 0, 12))
+print(same_char("programmer", 6, 7))
+print(same_char("programmer", 0, 4))
+print(same_char("programmer", 0, 12))
 '''
 
 # https://programming-26.mooc.fi/part-4/2-more-functions
 # Programming exercise: First, second and last words
 '''
-sen = "Gawdammit, am I bored as fuck."
-def fir_wor(sen):
-    fir_wor1 = sen.split()
+sent = "Gawdammit, am I bored as fuck."
+def fir_wor(sent):
+    fir_wor1 = sent.split()
     return fir_wor1[0]
 
-def sec_wor(sen):
-    sec_wor1 = sen.split()
+def sec_wor(sent):
+    sec_wor1 = sent.split()
     return sec_wor1[1]
 
-def las_wor(sen):
-    las_wor1 = sen.split()
+def las_wor(sent):
+    las_wor1 = sent.split()
     return las_wor1[-1]
 
-print(fir_wor(sen))
-print(sec_wor(sen))
-print(las_wor(sen))
+print(fir_wor(sent))
+print(sec_wor(sent))
+print(las_wor(sent))
 '''
 # OR
 '''
-sen = "Gawdammit, am I bored as fuck."
-def fir_wor(sen):
-    fir_wor1 = sen.find(" ")
-    return sen[:fir_wor1]
+sent = "Gawdammit, am I bored as fuck."
+def fir_wor(setn):
+    fir_wor1 = sent.find(" ")
+    return sent[:fir_wor1]
 
-def sec_wor(sen):
-    sec_wor1 = sen.find(" ")
-    sec_wor2 = sen[sec_wor1 + 1:]
+def sec_wor(sent):
+    sec_wor1 = sent.find(" ")
+    sec_wor2 = sent[sec_wor1 + 1:]
 
     sec_wor3 = sec_wor2.find(" ")
     return sec_wor2[:sec_wor3]
 
-def las_wor(sen):
-    while " " in sen:
-        las_wor1 = sen.find(" ")
-        sen = sen[las_wor1 + 1:]
-    return sen
+def four_wor(sent):
+    ite1 = 0
+    while ite1 != 3:
+        if " " in sent:
+            four_wor1 = sent.find(" ")
+            four_wor2 = sent[four_wor1 + 1:]
+            ite1 += 1
+            sent = four_wor2
 
-print(fir_wor(sen))
-print(sec_wor(sen))
-print(las_wor(sen))
+    four_wor3 = four_wor2.find(" ")
+    return four_wor2[:four_wor3]
+
+def las_wor(sent):
+    while " " in sent:
+        las_wor1 = sent.find(" ")
+        sent = sent[las_wor1 + 1:]
+    return sent
+
+print(fir_wor(sent))
+print(sec_wor(sent))
+print(four_wor(sent))
+print(las_wor(sent))
 '''
 
+# RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
+# 1. COMPLETE THE NAME OF THE FIRST WORD, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3
+# 2. THE NAME OF THE SECOND AND SUCEEDING WORDS MUST BE 3, IF ONLY 4 WHEN COMPLETE, 4
+# 3. PROPER SPACING BETWEEN LINES OF CODE
+
+
+# https://programming-26.mooc.fi/part-4/3-lists
+# Programming exercise: Change the value of an item
+'''
+index = 0
+lis = [1, 2, 3, 4, 5]
+
+while True:
+    index = int(input("Index: "))
+
+    if index == -1:
+        break
+
+    new_val = int(input("New Value: "))
+    lis[index] = new_val
+    print(lis)
+'''
+
+# https://programming-26.mooc.fi/part-4/3-lists
+# Programming exercise: Add items to a list
+'''
+trigger_1 = 0
+lis = []
+number_ite = int(input("How many items: "))
+
+while trigger_1 != number_ite:
+    trigger_1 += 1
+    append = int(input(f"Item {trigger_1}: "))
+    lis.append(append)
+
+print(lis)
+'''
