@@ -505,3 +505,8 @@ while trigger_1 != number_ite:
 
 print(lis)
 '''
+lis = 
+while True:
+    print(f"The list is now {lis}.")
+    operation = input("a(d)d, (r)emove, or e(x)it: ")
+    
