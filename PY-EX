@@ -491,7 +491,7 @@ while True:
     lis[index] = new_val
     print(lis)
 '''
-OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Add items to a list
 '''
@@ -506,7 +506,7 @@ while trigger_1 != number_ite:
 
 print(lis)
 '''
-OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Addition and removal
 '''
@@ -523,7 +523,7 @@ while True:
     else:
         break
 '''
-OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 # 
 # Programming exercise:Same word twice
 word = input("Word: ")
