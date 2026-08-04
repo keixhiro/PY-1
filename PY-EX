@@ -492,6 +492,9 @@ while True:
     print(lis)
 '''
 # OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Add items to a list
 '''
@@ -507,6 +510,9 @@ while trigger_1 != number_ite:
 print(lis)
 '''
 # OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Addition and removal
 '''
@@ -524,6 +530,18 @@ while True:
         break
 '''
 # OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-# 
+
+
+
+# https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise:Same word twice
-word = input("Word: ")
+'''
+lis = []
+while True:
+    word = input("Word: ")
+    if word in lis:
+        break
+    lis.append(word)
+length = len(lis)
+print(f"You typed in {length} different words.")
+'''
