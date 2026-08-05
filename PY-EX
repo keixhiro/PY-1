@@ -469,10 +469,11 @@ print(las_wor(sent))
 '''
 
 # RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
-# 1. COMPLETE THE NAME OF THE FIRST WORD, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
-# 2. THE NAME OF THE SECOND AND SUCEEDING WORDS MUST BE 3, AND IF 4 WHEN COMPLETE, 4.
-# 3. PROPER SPACING BETWEEN LINES OF CODE.
-# 4. IF IT BECOMES THREE WORDS WHEN NAMING VARIABLES, CUT THE FIRST WORD OUT.
+# 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
+# 2. VALUE_VAL_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
+# 3. PROPER SPACING
+# 4. IF VALUE_VALUE_0, CUT THE FIRST WORD OUT.
+# 5. # FUNCTION NAME_PURPOSE
 
 
 # https://programming-26.mooc.fi/part-4/3-lists
@@ -495,13 +496,13 @@ while True:
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Add items to a list
 '''
-trigger_1 = 0
+trigger1 = 0
 lis = []
 number_ite = int(input("How many items: "))
 
-while trigger_1 != number_ite:
-    trigger_1 += 1
-    append = int(input(f"Item {trigger_1}: "))
+while trigger1 != number_ite:
+    trigger1 += 1
+    append = int(input(f"Item {trigger1}: "))
     lis.append(append)
 
 print(lis)
@@ -581,3 +582,68 @@ lis([1, 2, 3])
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
 # Programming exercise: Anagrams
+'''
+def anagrams(word1, word2):
+    return sorted(word1) == sorted(word2)
+
+print(anagrams("mate", "tame"))
+print(anagrams("matte", "tame"))
+''
+
+#
+#
+'''
+
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: Palindromes
+'''
+def palindromes(word):
+    return word == word[::-1]
+
+def main():
+    word = input("Please type in a palindrome: ")
+
+    while not palindromes(word):
+        print("that wasn't a palindrome")
+        word = input("Please type in a palindrome: ")
+    
+    print(f"{word} is a palindrome!")
+'''
+
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: The sum of positive numbers
+'''
+lis = [1, -2, 3, -4, 5]
+
+def sum_pos(lis):
+    sum = 0
+    for a in lis:
+        if a > 0:
+            sum += a
+    return sum
+
+result = sum_pos(lis)
+print("The result is", result)
+'''
+
+# 
+# Programming exercise: Even numbers
+'''
+lis1 = [1, 2, 3, 4, 5]
+lis2 = []
+def even_num (lis1):
+    for a in lis1:
+        if a % 2 == 0:
+            lis2.append(a)
+new_list = even_num (lis1)
+print("original", lis1)
+print("new", lis2)
+'''
+
+#
+#Programming exercise: The sum of lists
+
+lis1 = [1, 2, 3]
+lis2 = [4, 5, 6]
+def lis_sums[] 
+print(list_sum(a, b)) # [8, 10, 12]
