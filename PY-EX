@@ -491,9 +491,6 @@ while True:
     lis[index] = new_val
     print(lis)
 '''
-# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-
 
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Add items to a list
@@ -509,18 +506,17 @@ while trigger_1 != number_ite:
 
 print(lis)
 '''
-# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-
 
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Addition and removal
 '''
 lis = []
 append = 0
+
 while True:
     print(f"The list is now {lis}.")
     operation = input("a(d)d, (r)emove, or e(x)it: ")
+
     if operation == "d":
         append += 1
         lis.append(append)
@@ -529,19 +525,51 @@ while True:
     else:
         break
 '''
-# OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-
 
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise:Same word twice
 '''
 lis = []
+
 while True:
     word = input("Word: ")
+    
     if word in lis:
         break
+    
     lis.append(word)
+
 length = len(lis)
 print(f"You typed in {length} different words.")
 '''
+
+# https://programming-26.mooc.fi/part-4/3-lists
+# Programming exercise: List twice
+'''
+lis = []
+zero = 0
+while True:
+    new_ite = int(input("New item: "))
+    lis.append(new_ite)
+    
+    if zero in lis:
+        break
+
+    print(f"The list is now: [{lis}]")
+    list_sort = sorted(lis)
+    print(f"When sorted: {list_sort}")
+'''
+
+#
+#
+'''
+word = input("What word? ")
+for character in word:
+    print(character)
+    print("*")
+'''
+
+#
+#
+
+def 
