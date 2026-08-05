@@ -564,8 +564,8 @@ while True:
 # Programming exercise: Star-studded
 '''
 word = input("What word? ")
-for character in word:
-    print(character)
+for a in word:
+    print(a)
     print("*")
 '''
 
