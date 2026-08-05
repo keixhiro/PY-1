@@ -560,8 +560,8 @@ while True:
     print(f"When sorted: {list_sort}")
 '''
 
-#
-#
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: Star-studded
 '''
 word = input("What word? ")
 for character in word:
@@ -569,7 +569,12 @@ for character in word:
     print("*")
 '''
 
-#
-#
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: List of stars
+'''
+def lis(numbers):
+    for a in numbers:
+        print("*" * a)
 
-def 
+lis([1, 2, 3])
+'''
