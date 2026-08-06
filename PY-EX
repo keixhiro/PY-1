@@ -645,5 +645,7 @@ print("new", lis2)
 
 lis1 = [1, 2, 3]
 lis2 = [4, 5, 6]
-def lis_sums[] 
-print(list_sum(a, b)) # [8, 10, 12]
+def lis_sums(lis1, lis2):
+    for a in (lis1, lis2):
+        
+print(list_sums(a, b)) # [8, 10, 12]
