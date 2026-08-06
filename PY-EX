@@ -645,7 +645,10 @@ print("new", lis2)
 
 lis1 = [1, 2, 3]
 lis2 = [4, 5, 6]
+lis3 = []
 def list_sums(lis1, lis2):
-    for a in (lis1, lis2):
-        return (lis1[a] + lis2[a])
+    for a in range(len(lis1)):
+        sum = (lis1[a] + lis2[a])
+        lis3.append(sum)
+    return lis3
 print(list_sums(lis1, lis2))
