@@ -650,7 +650,7 @@ print(list_sums(lis1, lis2))
 # 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
 # 2. FUNCTIONNAME_PURPOSE_NUMOFSIMILARFUNCTION
 # 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
-# 4. IF VALUE_value_value, CUT THE FIRST WORD OUT.
+# 4. IF VALUE_value_value, MAKE IT VALUEval_value.
 # 5. PROPER SPACING
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
