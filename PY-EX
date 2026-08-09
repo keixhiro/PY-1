@@ -468,14 +468,6 @@ print(four_wor(sent))
 print(las_wor(sent))
 '''
 
-# RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
-# 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
-# 2. VALUE_VAL_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
-# 3. PROPER SPACING
-# 4. IF VALUE_VALUE_0, CUT THE FIRST WORD OUT.
-# 5. # FUNCTION NAME_PURPOSE
-
-
 # https://programming-26.mooc.fi/part-4/3-lists
 # Programming exercise: Change the value of an item
 '''
@@ -626,7 +618,7 @@ result = sum_pos(lis)
 print("The result is", result)
 '''
 
-# 
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
 # Programming exercise: Even numbers
 '''
 lis1 = [1, 2, 3, 4, 5]
@@ -640,11 +632,11 @@ print("original", lis1)
 print("new", lis2)
 '''
 
-#
-#Programming exercise: The sum of lists
-
-lis1 = [1, 2, 3]
-lis2 = [4, 5, 6]
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: The sum of lists
+'''
+lis1 = [1, 2, 4]
+lis2 = [4, 5, 7]
 lis3 = []
 def list_sums(lis1, lis2):
     for a in range(len(lis1)):
@@ -652,4 +644,76 @@ def list_sums(lis1, lis2):
         lis3.append(sum)
     return lis3
 print(list_sums(lis1, lis2))
+'''
+
+# RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
+# 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
+# 2. FUNCTIONNAME_PURPOSE_NUMOFSIMILARFUNCTION
+# 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
+# 4. IF VALUE_value_value, CUT THE FIRST WORD OUT.
+# 5. PROPER SPACING
+
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: Distinct numbers
+'''
+lis1 = [1,2, 3, 1, 2, 3, 4, 4, 5, 5]
+lis2 = []
+
+def distinct(lis1, lis2):
+    for a in lis1:
+        if a in lis2:
+            lis1.remove(a)
+        else:
+            lis2.append(a)
+    return lis2
+print (distinct(lis1, lis2))
+'''
+
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: The length of the longest in the list
+'''
+lis = ["first", "second", "third"]
+
+def longest_len(lis):
+    length = 0
+    for a in lis:
+        length_lis = len(a)
+        if length_lis > length:
+            length = length_lis
+    return length
+print(longest_len(lis))
+'''
+
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
+# Programming exercise: The shortest in the list
+'''
+lis = ["one", "second", "third"]
+def longest_len(lis):
+    length = 100
+    for a in lis:
+        length_len = len(lis)
+        if length > length_len:
+            length = length_len
+    return length
+print(longest_len(lis))
+'''
+
+#
+# Programming exercise: All the longest in the list
+'''
+lis1 = ["first", "second", "third", "fourth"]
+lis2 = []
+def alllon_len(lis1, lis2):
+    length = 0
+    for a in lis1:
+        length_len1 = len(a)
+        if length < length_len1:
+            length - length_len1
+    for a in lis1:
+        length_len2 = len(a)
+        if length_len2 == length_len1:
+            lis2.append(a)
+    print(lis2)
+alllon_len(lis1, lis2)
+'''
 
