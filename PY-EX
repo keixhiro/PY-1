@@ -652,3 +652,4 @@ def list_sums(lis1, lis2):
         lis3.append(sum)
     return lis3
 print(list_sums(lis1, lis2))
+
