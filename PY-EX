@@ -688,6 +688,7 @@ print(longest_len(lis))
 # Programming exercise: The shortest in the list
 '''
 lis = ["one", "second", "third"]
+
 def longest_len(lis):
     length = 100
     for a in lis:
@@ -698,23 +699,23 @@ def longest_len(lis):
 print(longest_len(lis))
 '''
 
-#
+# https://programming-26.mooc.fi/part-4/4-definite-iteration
 # Programming exercise: All the longest in the list
 '''
 lis1 = ["first", "second", "third", "fourth"]
 lis2 = []
+
 def alllon_len(lis1, lis2):
     length = 0
     for a in lis1:
         length_len1 = len(a)
         if length < length_len1:
-            length - length_len1
+            length = length_len1
     for a in lis1:
         length_len2 = len(a)
-        if length_len2 == length_len1:
+        if length_len2 == length:
             lis2.append(a)
     print(lis2)
 alllon_len(lis1, lis2)
 '''
 
-okay gets ko na
