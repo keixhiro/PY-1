@@ -665,8 +665,8 @@ def distinct(lis1, lis2):
             lis1.remove(a)
         else:
             lis2.append(a)
-    return lis2
-print (distinct(lis1, lis2))
+    print(lis2)
+distinct(lis1, lis2)
 '''
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
@@ -680,8 +680,8 @@ def longest_len(lis):
         length_lis = len(a)
         if length_lis > length:
             length = length_lis
-    return length
-print(longest_len(lis))
+    print(length)
+longest_len(lis)
 '''
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
@@ -695,8 +695,8 @@ def longest_len(lis):
         length_len = len(lis)
         if length > length_len:
             length = length_len
-    return length
-print(longest_len(lis))
+    print(length)
+longest_len(lis)
 '''
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
