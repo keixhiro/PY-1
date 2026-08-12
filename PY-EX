@@ -648,7 +648,7 @@ print(list_sums(lis1, lis2))
 
 # RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
 # 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
-# 2. FUNCTIONNAME_PURPOSE_NUMOFSIMILARFUNCTION
+# 2. FUNCTIONNAME/1ST PURPOSE_PURPOSE_NUMOFSIMILARFUNCTION
 # 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
 # 4. IF VALUE_value_value, MAKE IT VALUEval_value.
 # 5. PROPER SPACING
@@ -666,6 +666,7 @@ def distinct(lis1, lis2):
         else:
             lis2.append(a)
     print(lis2)
+
 distinct(lis1, lis2)
 '''
 
@@ -681,6 +682,7 @@ def longest_len(lis):
         if length_lis > length:
             length = length_lis
     print(length)
+
 longest_len(lis)
 '''
 
@@ -689,14 +691,15 @@ longest_len(lis)
 '''
 lis = ["one", "second", "third"]
 
-def longest_len(lis):
+def shortest_len(lis):
     length = 100
     for a in lis:
         length_len = len(lis)
         if length > length_len:
             length = length_len
     print(length)
-longest_len(lis)
+
+shortest_len(lis)
 '''
 
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
@@ -716,6 +719,37 @@ def alllon_len(lis1, lis2):
         if length_len2 == length:
             lis2.append(a)
     print(lis2)
+
 alllon_len(lis1, lis2)
 '''
 
+# https://programming-26.mooc.fi/part-4/5-print-statement-formatting
+# Programming exercise: Integers to strings
+'''
+lis1 = [0.123, 0.456]
+lis2 = []
+
+def formatted(lis1, lis2):
+    for a in lis1:
+        formatter = f"{a:.2f}"
+        lis2.append(formatter)
+    print(lis2)
+
+formatted(lis1, lis2)
+'''
+
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
+# Programming exercise: Everything reversed
+'''
+lis = ["Hi", "there", "example", "one more"]
+lis2 = []
+def reverse(lis, lis2):
+    for a in reversed(lis):
+        lis2.append(a[::-1])
+    return lis2
+
+print(reverse(lis, lis2))
+'''
+
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
+#

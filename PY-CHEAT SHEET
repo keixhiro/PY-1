@@ -1,3 +1,640 @@
-um ano
+# Python Programming MOOC — Detailed Cheat Sheet
+*University of Helsinki — Introduction to Programming, Parts 1–7*
 
+Each Part below is broken into its official lessons, in order, with concise notes and runnable code for every core idea.
 
+---
+
+## PART 1 — Getting Started with Programming
+
+### 1.1 Getting started
+```python
+print("Hi there!")                 # prints text to the screen
+print("Line one")
+print("Line two")                  # each print() call = new line
+print(2 + 3)                       # arithmetic works directly inside print
+print("2 + 3")                     # this prints the literal text "2 + 3", not 5
+```
+- A **string** is text inside quotes (`"..."` or `'...'`).
+- Commands execute top to bottom, one at a time.
+- Comments start with `#` and are ignored by Python — used to explain code.
+
+### 1.2 Information from the user
+```python
+name = input("What is your name? ")   # input() always returns a string
+print("Hello " + name)
+
+age = input("Age: ")                  # "25" — a string, not a number!
+age = int(age)                        # convert to integer
+height = float(input("Height: "))     # convert to a decimal number
+```
+- `input()` pauses the program and waits for the user to type something + press Enter.
+- Whatever the user types comes back **as a string**, even if it looks like a number.
+
+### 1.3 More about variables
+```python
+x = 5                # assignment: store 5 in variable x
+x = x + 1             # x is now 6 — reassigning is allowed
+y = x                 # y copies the current value of x
+
+# Variable naming rules: letters, numbers, underscores; can't start with a number
+first_name = "Ann"    # snake_case is the Python convention
+```
+- A variable is a named storage location; its value can change over time.
+- Variables must be created (assigned) before they're used.
+
+### 1.4 Arithmetic operations
+```python
+3 + 2      # addition -> 5
+3 - 2      # subtraction -> 1
+3 * 2      # multiplication -> 6
+3 / 2      # division -> 1.5 (always returns a float)
+3 // 2     # floor (integer) division -> 1
+3 % 2      # modulo (remainder) -> 1
+3 ** 2     # exponentiation -> 9
+
+result = (2 + 3) * 4     # parentheses control order of operations
+result += 1               # shorthand for result = result + 1  (also -=, *=, /=)
+```
+- Standard order of operations (PEMDAS) applies.
+- Mixing `int` and `float` in an operation produces a `float`.
+
+### 1.5 Conditional statements
+```python
+age = int(input("Age: "))
+
+if age >= 18:
+    print("You are an adult")
+elif age >= 13:
+    print("You are a teenager")
+else:
+    print("You are a child")
+
+# Comparison operators: == != < > <= >=
+if age == 18:
+    print("exactly 18")
+```
+- The indented block under `if`/`elif`/`else` only runs if that condition is `True`.
+- Only one branch of an `if`/`elif`/`else` chain executes.
+
+---
+
+## PART 2 — Program Structure and Repetition
+
+### 2.1 Programming terminology
+- **Statement** — a single instruction/command.
+- **Expression** — something that evaluates to a value (e.g. `3 + 2`).
+- **Syntax error** — invalid Python code structure (won't run).
+- **Logical/runtime error** — code runs but produces wrong results or crashes.
+
+### 2.2 More conditionals (`else`, `elif`)
+```python
+number = int(input("Number: "))
+
+if number > 0:
+    print("positive")
+elif number < 0:
+    print("negative")
+else:
+    print("zero")
+```
+- `elif` lets you chain multiple conditions; only the first true branch runs.
+- Conditions are evaluated top to bottom.
+
+### 2.3 Combining conditions
+```python
+age = 20
+has_ticket = True
+
+if age >= 18 and has_ticket:        # both must be True
+    print("Entry allowed")
+
+if age < 13 or age > 65:            # either can be True
+    print("discount applies")
+
+if not has_ticket:                  # negation
+    print("buy a ticket")
+
+# Chained comparisons
+if 18 <= age <= 65:
+    print("working age")
+```
+- `and`, `or`, `not` combine boolean expressions.
+- Python allows chained comparisons like `0 <= x <= 10`.
+
+### 2.4 Simple loops
+```python
+i = 1
+while i <= 5:               # repeats while condition is True
+    print(i)
+    i += 1                  # must update, or infinite loop!
+
+while True:                 # infinite loop
+    cmd = input("> ")
+    if cmd == "end":
+        break                # exits the loop immediately
+    print("you typed:", cmd)
+
+count = 0
+while count < 10:
+    count += 1
+    if count % 2 == 0:
+        continue             # skips rest of this iteration
+    print(count)             # prints only odd numbers
+```
+- `while` loops run as long as the condition holds.
+- `break` exits the loop entirely; `continue` skips to the next iteration.
+
+---
+
+## PART 3 — Loops, Strings, and Functions
+
+### 3.1 Loops with conditions
+```python
+total = 0
+while True:
+    number = int(input("Number (0 to stop): "))
+    if number == 0:
+        break
+    total += number
+print("Total:", total)
+```
+- Common pattern: loop indefinitely, use a **sentinel value** to break out.
+
+### 3.2 Working with strings
+```python
+s = "Hello, World!"
+
+len(s)                 # 13 — length
+s.lower()               # "hello, world!"
+s.upper()               # "HELLO, WORLD!"
+s[0]                    # "H" — indexing (0-based)
+s[-1]                   # "!" — last character
+s[0:5]                  # "Hello" — slicing [start:end), end excluded
+s[7:]                   # "World!" — slice to end
+s.replace("Hello", "Hi") # "Hi, World!"
+s.strip()                # removes leading/trailing whitespace
+s.split(",")             # ["Hello", " World!"] — split into a list
+"-".join(["a","b","c"])  # "a-b-c" — join a list into a string
+
+"World" in s             # True — substring check
+s.count("l")              # 3
+s.find("World")           # 7 — index of substring, -1 if not found
+
+for char in s:            # loop through each character
+    print(char)
+```
+- Strings are **immutable** — methods return a *new* string, they don't change the original.
+- `s[start:end:step]` is the general slicing form.
+
+### 3.3 More loops (`for`)
+```python
+for i in range(5):        # 0, 1, 2, 3, 4
+    print(i)
+
+for i in range(2, 10):    # 2..9
+    print(i)
+
+for i in range(0, 10, 2): # 0,2,4,6,8 — step of 2
+    print(i)
+
+for i in range(10, 0, -1): # counts down 10..1
+    print(i)
+
+for letter in "abc":       # iterate a string directly
+    print(letter)
+```
+- `range(stop)`, `range(start, stop)`, `range(start, stop, step)` — `stop` is never included.
+- `for` loops are used when you know how many times / over what sequence you're iterating; `while` when it depends on a condition.
+
+### 3.4 Defining functions
+```python
+def greet():                    # function with no parameters
+    print("Hello!")
+
+def add(a, b):                  # parameters a, b
+    return a + b                # return sends a value back
+
+def greet_person(name="friend"): # default parameter value
+    print(f"Hello, {name}!")
+
+result = add(3, 4)              # call & store the return value
+greet_person()                  # uses default -> "Hello, friend!"
+greet_person("Ann")             # overrides default -> "Hello, Ann!"
+
+def describe(name, age=18, city="Helsinki"):  # multiple defaults
+    print(f"{name}, {age}, {city}")
+describe("Ann", city="Espoo")   # keyword argument, skips age default
+```
+- A function without `return` implicitly returns `None`.
+- Parameters are local to the function; changes to them don't affect variables outside (for immutable types).
+
+---
+
+## PART 4 — Functions, Lists, and Iteration
+
+### 4.1 The VS Code editor, Python interpreter & debugger
+- Practical tooling lesson: running `.py` files, using the built-in debugger, breakpoints, and stepping through code to inspect variable values — useful for finding logic errors.
+
+### 4.2 More functions
+```python
+def calculate(a, b, operation):        # functions can take other values, incl. strings
+    if operation == "add":
+        return a + b
+    elif operation == "sub":
+        return a - b
+
+def is_even(n):                        # functions returning booleans
+    return n % 2 == 0
+
+def process(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+    return total                        # single exit value
+
+def min_max(numbers):                  # returning multiple values (as a tuple)
+    return min(numbers), max(numbers)
+low, high = min_max([3, 1, 4, 1, 5])
+```
+- Functions can call other functions, and can return computed results for further use.
+- A function can return more than one value, comma-separated (packed into a tuple).
+
+### 4.3 Lists
+```python
+numbers = [1, 2, 3, 4]
+fruits = ["apple", "banana"]
+empty = []
+
+numbers.append(5)          # add to end -> [1,2,3,4,5]
+numbers.insert(0, 0)       # insert at index -> [0,1,2,3,4,5]
+numbers.remove(3)          # removes first matching value
+numbers.pop()               # removes & returns last item
+numbers.pop(0)               # removes & returns item at index
+del numbers[0]                # delete by index
+
+len(numbers)                 # number of items
+numbers[0]                   # access by index
+numbers[-1]                  # last item
+3 in numbers                  # membership test -> True/False
+
+for n in numbers:             # iterate values
+    print(n)
+for i in range(len(numbers)): # iterate by index
+    print(i, numbers[i])
+
+numbers.sort()                # sorts in place, ascending
+numbers.sort(reverse=True)    # descending
+sorted(numbers)                # returns a NEW sorted list, original unchanged
+numbers.reverse()              # reverses in place
+
+sum(numbers); max(numbers); min(numbers)  # built-in aggregate functions
+```
+- Lists are **mutable**, ordered, and can hold mixed types.
+- `list.sort()` changes the list; `sorted(list)` returns a copy.
+
+### 4.4 Definite iteration
+```python
+for item in [1, 2, 3]:          # "definite" = number of repeats is known in advance
+    print(item)
+
+for i in range(100):            # e.g. run something exactly 100 times
+    pass                         # placeholder that does nothing
+
+squares = []
+for x in range(1, 6):
+    squares.append(x ** 2)      # building a list via a loop
+```
+- Contrast with **indefinite iteration** (`while`), where the number of repeats depends on a condition evaluated each time.
+
+### 4.5 Print statement formatting
+```python
+name, age = "Ann", 30
+print(f"{name} is {age} years old")     # f-string (preferred, modern)
+print("{} is {} years old".format(name, age))  # .format() method
+print(name, "is", age, "years old")     # comma-separated, auto space
+
+pi = 3.14159
+print(f"{pi:.2f}")          # "3.14" — 2 decimal places
+print(f"{age:5d}")          # right-aligned in a 5-char field
+print(f"{name!r}")          # repr form -> 'Ann'
+
+print("a", "b", "c", sep="-")   # "a-b-c" — custom separator
+print("no newline", end="")     # suppress the trailing newline
+```
+- f-strings (`f"...{expr}..."`) are the cleanest way to embed values in text.
+- Format specifiers (`:.2f`, `:5d`, etc.) control decimal places, width, alignment.
+
+### 4.6 More strings and lists
+```python
+"3,14".replace(",", ".")            # normalize decimal separator
+words = "the quick brown fox".split()  # split on whitespace -> list of words
+"-".join(words)                       # rejoin with a different separator
+
+nested = [[1, 2], [3, 4]]             # list of lists (2D structure)
+nested[0][1]                          # -> 2
+for row in nested:
+    for value in row:
+        print(value)
+
+matrix_sum = sum(sum(row) for row in nested)  # combining loops/comprehensions
+
+list("hello")                         # ['h','e','l','l','o'] — string to list of chars
+```
+- Strings ↔ lists conversions (`split`, `join`, `list()`) are a very common pattern.
+- Lists of lists model grids, tables, matrices.
+
+---
+
+## PART 5 — Data Structures: Lists, Dictionaries, Tuples
+
+### 5.1 More lists
+```python
+values = [5, 3, 8, 1, 9]
+
+subset = values[1:3]         # slicing a list -> [3, 8]
+values[0] = 100               # modify by index
+values += [10, 20]            # concatenate lists
+
+squares = [x**2 for x in range(10)]                 # list comprehension
+evens = [x for x in range(20) if x % 2 == 0]        # with filter condition
+pairs = [(x, y) for x in range(3) for y in range(3)] # nested comprehension
+
+copy_of_values = values.copy()   # shallow copy (see References below)
+```
+- List comprehensions: `[expression for item in iterable if condition]`.
+
+### 5.2 References
+```python
+a = [1, 2, 3]
+b = a                 # b refers to the SAME list object as a
+b.append(4)
+print(a)               # -> [1, 2, 3, 4]  (a changed too!)
+
+c = a.copy()            # c is an independent copy
+c.append(5)
+print(a)                # unaffected by changes to c
+
+def modify(lst):        # lists passed to functions are references too
+    lst.append(99)
+modify(a)                # a is changed inside the function
+```
+- Lists (and dicts) are **mutable objects** — variables store *references* to them, not copies.
+- Numbers, strings, and tuples are immutable — reassigning inside a function does not affect the caller's variable.
+
+### 5.3 Dictionary
+```python
+person = {"name": "Ann", "age": 30}     # key-value pairs
+
+person["age"]                # 30 — access by key
+person["city"] = "Helsinki"  # add a new key
+person["age"] = 31           # update existing key
+del person["city"]           # remove a key
+"name" in person               # membership test on KEYS
+person.get("email", "n/a")     # safe access with a default if missing
+
+for key in person:              # iterate keys
+    print(key)
+for key, value in person.items():  # iterate key-value pairs
+    print(key, value)
+for value in person.values():   # iterate values only
+    print(value)
+
+len(person)                     # number of key-value pairs
+
+# building a dictionary from data
+word_counts = {}
+for word in "the cat sat on the mat".split():
+    if word not in word_counts:
+        word_counts[word] = 0
+    word_counts[word] += 1
+```
+- Dictionaries map keys → values; keys must be unique and immutable (strings, numbers, tuples).
+- Great for counting, grouping, and lookups by name instead of index.
+
+### 5.4 Tuple
+```python
+point = (3, 4)              # tuple: ordered, immutable
+x, y = point                 # unpacking
+point[0]                     # 3 — indexing works like lists
+
+def min_max(nums):
+    return min(nums), max(nums)   # returns a tuple
+lo, hi = min_max([4, 2, 9])
+
+coords = [(0,0), (1,2), (3,4)]    # list of tuples — common combo
+for x, y in coords:                # unpack while iterating
+    print(x, y)
+```
+- Use a tuple when the group of values shouldn't change (e.g. coordinates, RGB colors).
+- Tuples can be used as dictionary keys; lists cannot (lists aren't hashable).
+
+---
+
+## PART 6 — Files, Error Handling, Scope
+
+### 6.1 Reading files
+```python
+with open("data.txt") as f:      # "with" auto-closes the file afterward
+    for line in f:                # iterate line by line
+        print(line.strip())        # strip() removes the trailing newline
+
+with open("data.txt") as f:
+    lines = f.readlines()          # list of all lines (with \n included)
+
+with open("data.txt") as f:
+    content = f.read()             # entire file as one string
+```
+- Always prefer `with open(...)` over manual `open()`/`close()` — it's safer.
+- Lines from a file keep their trailing `\n`; strip it before using the text.
+
+### 6.2 Writing files
+```python
+with open("out.txt", "w") as f:   # "w" = write (overwrites existing content)
+    f.write("first line\n")
+    f.write("second line\n")
+
+with open("out.txt", "a") as f:   # "a" = append (adds to the end)
+    f.write("third line\n")
+
+lines = ["a", "b", "c"]
+with open("out.txt", "w") as f:
+    for line in lines:
+        f.write(line + "\n")
+```
+- File modes: `"r"` read (default), `"w"` write/overwrite, `"a"` append.
+
+### 6.3 Handling errors
+```python
+try:
+    number = int(input("Number: "))
+    result = 10 / number
+    print(result)
+except ValueError:
+    print("That wasn't a valid number")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except Exception as e:            # catch-all, use sparingly
+    print("Something went wrong:", e)
+else:
+    print("No errors occurred")    # runs only if try succeeded
+finally:
+    print("Always runs")           # cleanup code, runs no matter what
+```
+- `try`/`except` prevents a program from crashing on bad input or unexpected conditions.
+- Catch the most specific exception type possible rather than a bare `except:`.
+
+### 6.4 Local and global variables (scope)
+```python
+x = 10                       # global variable
+
+def show():
+    print(x)                  # can READ a global variable
+
+def change():
+    x = 5                     # this creates a NEW local variable x, doesn't touch global
+    print(x)
+
+def change_global():
+    global x                  # explicitly modify the global variable
+    x = 5
+
+def outer():
+    y = 1
+    def inner():               # inner functions see outer's local variables
+        print(y)
+    inner()
+```
+- Variables created inside a function are **local** — they exist only during that call.
+- `global` keyword is needed to modify (not just read) a global variable from inside a function.
+
+---
+
+## PART 7 — Modules, Randomness, Dates, Data Processing
+
+### 7.1 Modules
+```python
+import math
+math.sqrt(16)          # 4.0
+math.pi                 # 3.14159...
+
+import math as m         # alias
+m.floor(3.7)              # 3
+
+from math import sqrt, pi  # import specific names directly
+sqrt(25)                    # 5.0 — no prefix needed
+```
+- A module is a `.py` file (or built-in library) containing reusable functions/values.
+- `import x`, `import x as y`, and `from x import y` are the three main import styles.
+
+### 7.2 Randomness
+```python
+import random
+
+random.randint(1, 10)        # random int, BOTH ends inclusive
+random.random()               # random float between 0.0 and 1.0
+random.choice([1,2,3,4])       # random single item from a sequence
+random.sample([1,2,3,4,5], 2)  # 2 unique random items, no repeats
+items = [1,2,3]
+random.shuffle(items)           # shuffles the list in place
+```
+- `randint(a, b)` includes both `a` and `b`, unlike `range()`.
+
+### 7.3 Times and dates
+```python
+import datetime
+
+today = datetime.date.today()          # current date
+now = datetime.datetime.now()           # current date + time
+
+d = datetime.date(2026, 8, 12)           # construct a specific date
+d.year; d.month; d.day                   # components
+
+delta = datetime.timedelta(days=7)       # duration
+next_week = today + delta                # date arithmetic
+diff = datetime.date(2026,12,25) - today  # difference between dates -> timedelta
+
+d.strftime("%d.%m.%Y")                    # format date as string
+datetime.datetime.strptime("12.08.2026", "%d.%m.%Y")  # parse string -> date
+```
+- `timedelta` represents a duration and supports `+`/`-` arithmetic with dates.
+
+### 7.4 Data processing
+```python
+with open("grades.csv") as f:
+    rows = [line.strip().split(",") for line in f]   # simple CSV-style parsing
+
+header, data = rows[0], rows[1:]
+
+totals = {}
+for row in data:
+    name, score = row[0], int(row[1])
+    totals[name] = totals.get(name, 0) + score
+
+# common pattern: read -> clean -> aggregate -> report
+average = sum(int(r[1]) for r in data) / len(data)
+```
+- Typical workflow: read raw text, split/convert fields, accumulate results in a list/dict, then summarize.
+
+### 7.5 Creating your own modules
+```python
+# --- file: mymodule.py ---
+def greet(name):
+    return f"Hello, {name}!"
+
+PI_APPROX = 3.14
+
+# --- file: main.py ---
+import mymodule
+print(mymodule.greet("Ann"))
+print(mymodule.PI_APPROX)
+
+if __name__ == "__main__":     # only runs when file is executed directly,
+    greet("test")               # not when imported as a module
+```
+- Any `.py` file can be imported as a module by other files in the same folder.
+- `if __name__ == "__main__":` guards code that should only run when the file itself is executed.
+
+### 7.6 More Python features
+```python
+numbers = [1, 2, 3, 4, 5]
+list(map(lambda x: x * 2, numbers))         # [2,4,6,8,10] — apply function to each item
+list(filter(lambda x: x % 2 == 0, numbers))  # [2, 4] — keep items matching condition
+
+square = lambda x: x ** 2                    # anonymous one-line function
+square(5)                                     # 25
+
+zip([1,2,3], ["a","b","c"])                   # pairs elements: (1,'a'),(2,'b'),(3,'c')
+enumerate(["a","b","c"])                       # (0,'a'),(1,'b'),(2,'c') — index + value
+
+for i, letter in enumerate(["a","b","c"]):
+    print(i, letter)
+```
+- `lambda` creates small, unnamed functions inline — handy with `map`/`filter`/`sorted(key=...)`.
+- `enumerate()` and `zip()` are common tools for combined iteration.
+
+---
+
+## Quick Reference: Common Pitfalls
+
+| Issue | Fix |
+|---|---|
+| `input()` always returns a string | wrap with `int()` / `float()` when you need a number |
+| `/` vs `//` | `/` → float division, `//` → integer (floor) division |
+| `range(n)` stops **before** `n` | `range(5)` → 0,1,2,3,4 |
+| Forgetting to update loop variable | `while` loops need the condition to eventually become `False` |
+| Mutable default arguments | avoid `def f(x=[])`; use `x=None` and set inside the function |
+| Modifying a list you're iterating | iterate over a copy (`for x in list.copy()`) if removing items |
+| `list.sort()` vs `sorted(list)` | `.sort()` mutates in place & returns `None`; `sorted()` returns a new list |
+| Local vs global variables | assigning inside a function creates a *local* variable unless `global` is used |
+| Comparing floats with `==` | floating-point rounding errors — compare with a small tolerance instead |
+| File not closing | always use `with open(...) as f:` |
+
+## Quick Reference: Core Data Structures
+
+| Structure | Ordered? | Mutable? | Duplicates? | Access by |
+|---|---|---|---|---|
+| `list` | ✅ | ✅ | ✅ | index |
+| `tuple` | ✅ | ❌ | ✅ | index |
+| `dict` | ✅ (insertion order) | ✅ | keys unique | key |
+| `set` | ❌ | ✅ | ❌ | membership only |
