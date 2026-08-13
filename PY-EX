@@ -753,4 +753,3 @@ print(reverse(lis, lis2))
 
 # https://programming-26.mooc.fi/part-4/6-strings-and-lists
 #
-hmm
