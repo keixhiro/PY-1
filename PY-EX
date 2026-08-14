@@ -753,3 +753,14 @@ print(reverse(lis, lis2))
 
 # https://programming-26.mooc.fi/part-4/6-strings-and-lists
 #
+def most_common_character(s):
+    best_char = None
+    best_count = 0
+
+    for ch in s:
+        count = s.count(ch)
+        if count > best_count:
+            best_count = count
+            best_char = ch
+
+    return best_char
