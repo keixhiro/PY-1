@@ -646,13 +646,6 @@ def list_sums(lis1, lis2):
 print(list_sums(lis1, lis2))
 '''
 
-# RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
-# 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
-# 2. FUNCTIONNAME/1ST PURPOSE_PURPOSE_NUMOFSIMILARFUNCTION
-# 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
-# 4. IF VALUE_value_value, MAKE IT VALUEval_value.
-# 5. PROPER SPACING
-
 # https://programming-26.mooc.fi/part-4/4-definite-iteration
 # Programming exercise: Distinct numbers
 '''
@@ -751,16 +744,54 @@ def reverse(lis, lis2):
 print(reverse(lis, lis2))
 '''
 
+
+
+# RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
+# 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
+
+# 2. Functionname / 1st purpose_purpose_number or WING IT
+
+# 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
+
+# 4. IF VALUE_value_value, MAKE IT value_value.
+
+# 5. PROPER SPACING
+
+
+
 # https://programming-26.mooc.fi/part-4/6-strings-and-lists
-#
-def most_common_character(s):
+# Programming exercise: Most common character
+'''
+def common_cha(letter):
+    largest_count = 0
     best_char = None
-    best_count = 0
 
-    for ch in s:
-        count = s.count(ch)
-        if count > best_count:
-            best_count = count
-            best_char = ch
-
+    for a in letter:
+        count = letter.count(a)
+        if count > largest_count:
+            largest_count = count
+            best_char = a
+    
     return best_char
+
+print(common_cha("abcdbde"))
+print(common_cha("exemplaryelementary"))
+'''
+
+#
+# Programming exercise: No vowels allowed
+'''
+def no_vow(letter):
+    vow = "aeiou"
+    new_wor = ""
+    for a in letter:
+        if a not in vow:
+            new_wor += a
+
+    return new_wor
+
+print(no_vow("this is an example"))
+'''
+
+# 
+# Programming exercise: No shouting allowed
