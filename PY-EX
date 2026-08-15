@@ -778,7 +778,7 @@ print(common_cha("abcdbde"))
 print(common_cha("exemplaryelementary"))
 '''
 
-#
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
 # Programming exercise: No vowels allowed
 '''
 def no_vow(letter):
@@ -793,5 +793,37 @@ def no_vow(letter):
 print(no_vow("this is an example"))
 '''
 
-# 
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
 # Programming exercise: No shouting allowed
+'''
+def lower_case(lis1):
+    trigger = None
+    lis2 = []
+    for a in lis1:
+        trigger = a.isupper()
+        if trigger is True:
+            trigger = None
+        else:
+            lis2.append(a)
+
+    return lis2
+
+print(lower_case(["ABC", "def", "UPPER", "ANOTHERUPPER", "lower", "another lower", "Capitalized"]))
+'''
+
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
+# Programming exercise: Neighbours in a lsit
+
+def neighbors(numbers):
+    a_stored = 0
+    con = 1
+    for a in numbers:
+        dif = a - a_stored
+        absolute_dif = abs(dif)
+        if dif == 1:
+            con += 1
+        a_stored = a
+
+    return con
+
+print(neighbors([1, 2, 5, 7, 6, 5, 6, 3, 4, 1, 0]))
