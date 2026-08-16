@@ -812,18 +812,24 @@ print(lower_case(["ABC", "def", "UPPER", "ANOTHERUPPER", "lower", "another lower
 '''
 
 # https://programming-26.mooc.fi/part-4/6-strings-and-lists
-# Programming exercise: Neighbours in a lsit
-
+# Programming exercise: Neighbours in a list
+'''
 def neighbors(numbers):
-    a_stored = 0
+    a_stored = numbers[0]
     con = 1
-    for a in numbers:
+    longest_con = 1
+    for a in numbers[1:]:
         dif = a - a_stored
         absolute_dif = abs(dif)
-        if dif == 1:
+        if absolute_dif == 1:
             con += 1
+        else:
+            con = 1
+        if con > longest_con:
+            longest_con = con
         a_stored = a
 
-    return con
+    return longest_con
 
 print(neighbors([1, 2, 5, 7, 6, 5, 6, 3, 4, 1, 0]))
+'''
