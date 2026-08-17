@@ -831,5 +831,9 @@ def neighbors(numbers):
 
     return longest_con
 
-print(neighbors([1, 2, 5, 7, 6, 5, 6, 3, 4, 1, 0]))
+print(neighbors([1, 2, 3, 4, 5, 7, 6, 3, 4, 1, 0]))
 '''
+
+#
+#
+
