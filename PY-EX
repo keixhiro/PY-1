@@ -749,7 +749,7 @@ print(reverse(lis, lis2))
 # RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
 # 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
 
-# 2. Functionname / 1st purpose_purpose_number or WING IT
+# 2. Functionname / 1st purpose_purpose_number or WING IT as well as rule number 3, 4
 
 # 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
 
@@ -837,3 +837,66 @@ print(neighbors([1, 2, 3, 4, 5, 7, 6, 3, 4, 1, 0]))
 #
 #
 
+def exam_points():
+    lis1 = []
+    lis2 = []
+    lis3 = []
+    lis4 = []
+
+    points = " "
+    sum_ave = 0
+    divider = 0
+
+    while points != "":
+        points = input("Exam points and exercises: ")
+        points_exe = points.split()
+        if points != "":
+            lis1.append(int(points_exe[0]))
+            lis2.append(int(points_exe[1]))
+
+    for a in lis2:
+        lis3.append(a // 10)
+
+    for a in range(len(lis1)):
+        sum = (lis1[a] + lis3[a])
+        lis4.append(sum)
+
+    for a in lis4:
+        sum_ave += a
+        divider += 1
+    
+    points_ave = sum_ave / divider
+
+    grades = []
+    for b in range(len(lis4)):
+        if lis1[b] < 10:
+            grade = 0
+        elif lis4[b] <= 14:
+            grade = 0
+        elif lis4[b] <= 17:
+            grade = 1
+        elif lis4[b] <= 20:
+            grade = 2
+        elif lis4[b] <= 23:
+            grade = 3
+        elif lis4[b] <= 27:
+            grade = 4
+        else:
+            grade = 5
+        grades.append(grade)
+
+    passed = 0
+    for g in grades:
+        if g > 0:
+            passed += 1
+    pass_percentage = passed / len(grades) * 100
+
+    print("Statistics:")
+    print(f"Points average: {points_ave:.1f}")
+    print(f"Pass percentage: {pass_percentage:.1f}")
+    print("Grade distribution:")
+    for grade in range(5, -1, -1):
+        count = grades.count(grade)
+        print(f"  {grade}: {'*' * count}")
+
+exam_points()
