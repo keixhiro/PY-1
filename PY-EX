@@ -725,9 +725,8 @@ lis2 = []
 def formatted(lis1, lis2):
     for a in lis1:
         formatter = f"{a:.2f}"
-        lis2.append(formatter)
+        lis2.append(float(formatter))
     print(lis2)
-
 formatted(lis1, lis2)
 '''
 
@@ -749,11 +748,11 @@ print(reverse(lis, lis2))
 # RULES ON NAMING: (STARTS AT https://programming-26.mooc.fi/part-4/3-lists)
 # 1. VALUE, IF WHEN COMPLETE TURNS INTO A NON-VARIABLE, TURN INTO 3.
 
-# 2. Functionname / 1st purpose_purpose_number or WING IT as well as rule number 3, 4
+# 2. Functionname / 1st purpose_purpose_number or WING IT
 
-# 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4.
+# 3. value_VAL, IF ALREADY COMPLETE WHEN 4, THEN LET IT BE 4. or WING IT
 
-# 4. IF VALUE_value_value, MAKE IT value_value.
+# 4. IF VALUE_value_value, MAKE IT value_value. or WING IT
 
 # 5. PROPER SPACING
 
@@ -837,66 +836,63 @@ print(neighbors([1, 2, 3, 4, 5, 7, 6, 3, 4, 1, 0]))
 #
 #
 
-def exam_points():
-    lis1 = []
-    lis2 = []
-    lis3 = []
-    lis4 = []
-
+def bleh():
+    exam_points = []
+    num_exe = []
+    
     points = " "
-    sum_ave = 0
-    divider = 0
-
     while points != "":
         points = input("Exam points and exercises: ")
         points_exe = points.split()
         if points != "":
-            lis1.append(int(points_exe[0]))
-            lis2.append(int(points_exe[1]))
+            exam_points.append(int(points_exe[0]))
+            num_exe.append(int(points_exe[1]))
 
-    for a in lis2:
-        lis3.append(a // 10)
+    exe_points = []
+    for a in num_exe:
+        exe_points.append(a // 10)
 
-    for a in range(len(lis1)):
-        sum = (lis1[a] + lis3[a])
-        lis4.append(sum)
+    total_points = []
+    for a in range(len(exam_points)):
+        sum = (exam_points[a] + exe_points[a])
+        total_points.append(sum)
 
-    for a in lis4:
+    sum_ave = 0
+    for a in total_points:
         sum_ave += a
-        divider += 1
-    
-    points_ave = sum_ave / divider
+        points_ave = sum_ave / len(total_points)
 
     grades = []
-    for b in range(len(lis4)):
-        if lis1[b] < 10:
+    for a in range(len(exam_points)):
+        if exam_points[a] <= 10:
             grade = 0
-        elif lis4[b] <= 14:
+        elif total_points[a] <= 14:
             grade = 0
-        elif lis4[b] <= 17:
+        elif total_points[a] <= 17:
             grade = 1
-        elif lis4[b] <= 20:
+        elif total_points[a] <= 20:
             grade = 2
-        elif lis4[b] <= 23:
+        elif total_points[a] <= 23:
             grade = 3
-        elif lis4[b] <= 27:
+        elif total_points[a] <= 27:
             grade = 4
         else:
             grade = 5
         grades.append(grade)
 
-    passed = 0
-    for g in grades:
-        if g > 0:
-            passed += 1
-    pass_percentage = passed / len(grades) * 100
+    passer = 0
+    for a in grades:
+        if a > 0:
+            passer += 1
+    passing_per = passer / len(grades) * 100
 
     print("Statistics:")
-    print(f"Points average: {points_ave:.1f}")
-    print(f"Pass percentage: {pass_percentage:.1f}")
+    print(f"Points average: {points_ave:.2f}")
+    print(f"Pass percentage: {passing_per:.2f}")
     print("Grade distribution:")
-    for grade in range(5, -1, -1):
-        count = grades.count(grade)
-        print(f"  {grade}: {'*' * count}")
 
-exam_points()
+    for a in range(5, -1, -1):
+        count = grades.count(a)
+        print(f" {a}: {'*' * count}")
+
+bleh()
