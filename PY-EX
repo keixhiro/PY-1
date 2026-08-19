@@ -833,10 +833,10 @@ def neighbors(numbers):
 print(neighbors([1, 2, 3, 4, 5, 7, 6, 3, 4, 1, 0]))
 '''
 
-#
-#
-
-def bleh():
+# https://programming-26.mooc.fi/part-4/6-strings-and-lists
+# Programming exercise: Grade statistics
+'''
+def stats():
     exam_points = []
     num_exe = []
     
@@ -895,4 +895,48 @@ def bleh():
         count = grades.count(a)
         print(f" {a}: {'*' * count}")
 
-bleh()
+stats()
+'''
+
+# https://programming-26.mooc.fi/part-5/1-more-lists
+# Programming exercise: The longest string
+'''
+def longest(strings):
+    longest_str = 0
+    said_str = None
+    for a in strings:
+        length = len(a)
+        if length > longest_str:
+            longest_str = length
+            said_str = a
+    return said_str
+
+strings = ["hi", "hiya", "hello", "howdydoody", "hi there"]
+print(longest(strings))
+'''
+
+def sum_of_row(my_matrix, row_no: int):
+    # choose the desired row from within the matrix
+    row_sum = 0
+    for item in my_matrix[row_no]:
+        row_sum += item
+
+    return row_sum
+
+m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
+
+my_sum = sum_of_row(m, 1)
+print(my_sum) # prints out 33 (which equals 9 + 1 + 12 + 11)
+
+def sum_of_column(my_matrix, column_no: int):
+    # go through each row and select the item at the chosen position
+    column_sum = 0
+    for row in my_matrix:
+        column_sum += row[column_no]
+
+    return column_sum
+
+m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
+
+my_sum = sum_of_column(m, 2)
+print(my_sum) # prints out 39 (which equals 3 + 12 + 9 + 15)
