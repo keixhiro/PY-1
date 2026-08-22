@@ -1031,5 +1031,8 @@ sudoku = [
   [3, 0, 0, 0, 0, 0, 0, 0, 2]
 ]
 
-print(block_correct(sudoku, 0, 0))
-print(block_correct(sudoku, 1, 2))
+def sudokuu(sudoku, row: int, column: int):
+    print(sudoku[0][0])
+
+print(sudokuu(sudoku, 0, 0))
+print(sudokuu(sudoku, 1, 2))
