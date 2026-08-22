@@ -1021,7 +1021,7 @@ print(sudokuu(sudoku, 1))
 
 sudoku = [
   [9, 0, 2, 0, 8, 0, 3, 0, 0],
-  [2, 0, 0, 0, 5, 0, 7, 0, 0],
+  [2, 0, 2, 2, 5, 0, 7, 0, 0],
   [0, 2, 0, 3, 0, 0, 0, 0, 4],
   [2, 9, 4, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 7, 3, 0, 5, 6, 0],
@@ -1032,27 +1032,28 @@ sudoku = [
 ]
 
 def sudokuu(sudoku, row: int, column: int):
-    
+    trigger_one = 0
     a_compa = []
     for a in range(len(sudoku)):
-        b = sudoku[a][column]
-        if b != 0:
-            if b in a_compa:
-                return False
-        a_compa.append(b)
-        print(a_compa)
-    return True
+        for b in sudoku[row]:
+            if b != 0:
+                if b in a_compa:
+                    trigger_one = 1
+            print(b)
+            a_compa.append(b)
     b_compa = []
     for b in sudoku[row][column:column + 3]:
         if b != 0:
             if b in b_compa:
-                return False
+                trigger_one = 1
         b_compa.append(b)
-        print(b_compa)
-    return True
 
+    if trigger_one == 1:
+        return False
+    else:
+        return True
 
-  
+I feel so stupid
 
 print(sudokuu(sudoku, 0, 0))
 print(sudokuu(sudoku, 1, 2))
