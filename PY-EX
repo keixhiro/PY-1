@@ -1020,9 +1020,9 @@ print(sudokuu(sudoku, 1))
 # Programming exercise: Sudoku: check block
 
 sudoku = [
-  [9, 0, 2, 0, 8, 0, 3, 0, 0],
-  [2, 0, 2, 2, 5, 0, 7, 0, 0],
-  [0, 2, 0, 3, 0, 0, 0, 0, 4],
+  [9, 0, 3, 0, 8, 0, 3, 0, 0],
+  [2, 0, 0, 0, 5, 0, 7, 0, 0],
+  [0, 1, 0, 3, 0, 0, 0, 0, 4],
   [2, 9, 4, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 7, 3, 0, 5, 6, 0],
   [7, 0, 5, 0, 6, 0, 4, 0, 0],
@@ -1032,28 +1032,16 @@ sudoku = [
 ]
 
 def sudokuu(sudoku, row: int, column: int):
-    trigger_one = 0
-    a_compa = []
-    for a in range(len(sudoku)):
-        for b in sudoku[row]:
-            if b != 0:
-                if b in a_compa:
-                    trigger_one = 1
-            print(b)
-            a_compa.append(b)
-    b_compa = []
-    for b in sudoku[row][column:column + 3]:
-        if b != 0:
-            if b in b_compa:
-                trigger_one = 1
-        b_compa.append(b)
-
-    if trigger_one == 1:
-        return False
-    else:
-        return True
-
-I feel so stupid
+    for_compa = []
+    for a in range(row, row + 3):
+        for b in range(column, column + 3):
+            value = sudoku[a][b]
+            if value != 0:
+                if value in for_compa:
+                    return False
+                for_compa.append(value)
+    return True
+    
 
 print(sudokuu(sudoku, 0, 0))
-print(sudokuu(sudoku, 1, 2))
+print(sudokuu(sudoku, 1, 1))
