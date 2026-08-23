@@ -911,20 +911,20 @@ def longest(strings):
             said_str = a
     return said_str
 
-strings = ["Ihi", "hiya", "hello", "howdydoody", "hi there"]
+strings = ["hi", "hiya", "hello", "howdydoody", "hi there"]
 print(longest(strings))
 '''
 
 # https://programming-26.mooc.fi/part-5/1-more-lists
 # Programming exercise: Number of matching elements
 '''
-matrix = [[1, 2, 1], [0, 3, 1], [1, 0, 0]]
+matrix = [[1, 2, 1], [0, 3, 1], [0, 0, 0]]
 
 def matchy(matrix, matching):
     amt_matching = 0
     for a in range(len(matrix)):
         for b in matrix[a]:
-            if matching == b:
+            if b == matching:
                 amt_matching += 1
 
 
@@ -979,7 +979,6 @@ def sudokuu(sudoku, row: int):
                     return False
             for_compa.append(b)
             print(for_compa)
-            print("bleh")
         return True
 
 print(sudokuu(sudoku, 0))
@@ -1018,11 +1017,11 @@ print(sudokuu(sudoku, 1))
 
 # https://programming-26.mooc.fi/part-5/1-more-lists
 # Programming exercise: Sudoku: check block
-
+'''
 sudoku = [
-  [9, 0, 3, 0, 8, 0, 3, 0, 0],
-  [2, 0, 0, 0, 5, 0, 7, 0, 0],
-  [0, 1, 0, 3, 0, 0, 0, 0, 4],
+  [9, 0, 0, 0, 8, 0, 3, 0, 0],
+  [2, 0, 0, 2, 5, 0, 7, 0, 0],
+  [0, 2, 0, 3, 0, 0, 0, 0, 4],
   [2, 9, 4, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 7, 3, 0, 5, 6, 0],
   [7, 0, 5, 0, 6, 0, 4, 0, 0],
@@ -1045,3 +1044,59 @@ def sudokuu(sudoku, row: int, column: int):
 
 print(sudokuu(sudoku, 0, 0))
 print(sudokuu(sudoku, 1, 1))
+'''
+
+#
+#
+
+
+def sudokuu(sudoku):
+    for a in range(len(sudoku)):
+        row_compa = []
+        for b in sudoku[a]:
+            if b != 0:
+                if b in row_compa:
+                    return False
+            row_compa.append(b)
+    print("True1")
+
+    para_one = len(sudoku)
+    column = -1
+    while column < para_one - 1:
+        for_compa = []
+        column += 1
+        for a in range(len(sudoku)):
+            b = sudoku[a][column]
+            if b != 0:
+                if b in for_compa:
+                    return False
+            for_compa.append(b)
+    print("True2")
+
+sudoku1 = [
+  [9, 0, 0, 0, 8, 0, 3, 0, 0],
+  [2, 0, 0, 2, 5, 0, 7, 0, 0],
+  [0, 2, 0, 3, 0, 0, 0, 0, 4],
+  [2, 9, 4, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 7, 3, 0, 5, 6, 0],
+  [7, 0, 5, 0, 6, 0, 4, 0, 0],
+  [0, 0, 7, 8, 0, 3, 9, 0, 0],
+  [0, 0, 1, 0, 0, 0, 0, 0, 3],
+  [3, 0, 0, 0, 0, 0, 0, 0, 2]
+]
+
+print(sudokuu(sudoku1))
+print("ewan")
+sudoku2 = [
+  [2, 6, 7, 8, 3, 9, 5, 0, 4],
+  [9, 0, 3, 5, 1, 0, 6, 0, 0],
+  [0, 5, 1, 6, 0, 0, 8, 3, 9],
+  [5, 1, 9, 0, 4, 6, 3, 2, 8],
+  [8, 0, 2, 1, 0, 5, 7, 0, 6],
+  [6, 7, 4, 3, 2, 0, 0, 0, 5],
+  [0, 0, 0, 4, 5, 7, 2, 6, 3],
+  [3, 2, 0, 0, 8, 0, 0, 5, 7],
+  [7, 4, 5, 0, 0, 3, 9, 0, 1]
+]
+
+print(sudokuu(sudoku2))
