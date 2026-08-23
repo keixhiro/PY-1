@@ -1041,7 +1041,7 @@ def sudokuu(sudoku, row: int, column: int):
                     return False
                 for_compa.append(value)
     return True
-    
+
 
 print(sudokuu(sudoku, 0, 0))
 print(sudokuu(sudoku, 1, 1))
