@@ -1049,7 +1049,6 @@ print(sudokuu(sudoku, 1, 1))
 #
 #
 
-
 def sudokuu(sudoku):
     for a in range(len(sudoku)):
         row_compa = []
@@ -1063,15 +1062,33 @@ def sudokuu(sudoku):
     para_one = len(sudoku)
     column = -1
     while column < para_one - 1:
-        for_compa = []
+        col_compa = []
         column += 1
         for a in range(len(sudoku)):
             b = sudoku[a][column]
             if b != 0:
-                if b in for_compa:
+                if b in col_compa:
                     return False
-            for_compa.append(b)
+            col_compa.append(b)
     print("True2")
+
+    for row in range(0, 9, 3):
+           for column in range(0, 9, 3):
+               if not block_correct(sudoku, row, column):
+                   return False
+
+    for_compa = []
+    for a in range(row, row + 3):
+        for b in range(column, column + 3):
+            value = sudoku[a][b]
+            if value != 0:
+                if value in for_compa:
+                    return False
+            for_compa.append(value)
+    print("True3")
+
+    return True
+
 
 sudoku1 = [
   [9, 0, 0, 0, 8, 0, 3, 0, 0],
