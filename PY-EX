@@ -1048,9 +1048,9 @@ print(sudokuu(sudoku, 1, 1))
 
 # https://programming-26.mooc.fi/part-5/1-more-lists
 # Programming exercise: Sudoku: check grid
-
+'''
 def sudokuu(sudoku):
-    for a in range(len(sudoku)):
+    for a in range(0, 9):
         row_compa = []
         for b in sudoku[a]:
             if b != 0:
@@ -1058,11 +1058,8 @@ def sudokuu(sudoku):
                     return False
             row_compa.append(b)
 
-    para_one = len(sudoku)
-    column = -1
-    while column < para_one - 1:
+    for column in range(0, 9):
         col_compa = []
-        column += 1
         for a in range(len(sudoku)):
             b = sudoku[a][column]
             if b != 0:
@@ -1071,15 +1068,15 @@ def sudokuu(sudoku):
             col_compa.append(b)
 
     for row in range(0, 9, 3):
-           for column in range(0, 9, 3):
-                for_compa = []
-                for a in range(row, row + 3):
-                    for b in range(column, column + 3):
-                        value = sudoku[a][b]
-                        if value != 0:
-                            if value in for_compa:
-                                return False
-                        for_compa.append(value)
+        for column in range(0, 9, 3):
+            for_compa = []
+            for a in range(row, row + 3):
+                for b in range(column, column + 3):
+                    value = sudoku[a][b]
+                    if value != 0:
+                        if value in for_compa:
+                            return False
+                    for_compa.append(value)
     return True
 
 sudoku1 = [
@@ -1109,3 +1106,5 @@ sudoku2 = [
 ]
 
 print(sudokuu(sudoku2))
+'''
+
