@@ -1116,7 +1116,7 @@ def doubler(lis1: list):
     for a in lis1:
         lis2.append(a * 2)
 
-    lis2[:] = lis1
+    lis1[:] = lis2
 
 
 numbers = [2, 4, 5, 3, 11, -4]
