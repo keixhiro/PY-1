@@ -1,10 +1,14 @@
 C# Cheat Sheet — Intro to Arrays
 *(Covers w3schools.com/cs from "C# Intro" through "C# Arrays")*
 
+
+
 1. Introduction
 C# ("C-Sharp") is an **object-oriented** language created by Microsoft, runs on the **.NET Framework**.
 Related to C, C++, and Java.
 Used for: mobile apps, desktop apps, web apps/services, games, VR, databases, etc.
+
+
 
 2. Getting Started
 Typical tools: **Visual Studio**, **Visual Studio Code**, or an online compiler.
@@ -24,6 +28,8 @@ namespace HelloWorld
     }
 }
 
+
+
 3. Syntax
 `Main` is the entry point of every C# program.
 Every statement ends with a **semicolon `;`**.
@@ -31,15 +37,21 @@ C# is **case-sensitive** (`MyClass` ≠ `myclass`).
 Class names conventionally start with an uppercase letter (**PascalCase**); methods too.
 Curly braces `{}` define blocks of code (classes, methods, loops, conditionals).
 
+
+
 4. Output
 Console.WriteLine("Text");  // prints text and moves to a new line
 Console.Write("Text");      // prints text, no new line
 You can chain multiple `Write`/`WriteLine` calls; use `\n` for manual new lines inside a string.
 
+
+
 5. Comments
 // Single-line comment
 /* Multi-line
    comment */
+
+
 
 6. Variables
 Declaring
@@ -76,6 +88,8 @@ Must **start** with a letter or underscore (not a digit).
 Case-sensitive.
 Cannot be a **reserved keyword** (e.g., `int`, `class`).
 
+
+
 7. Data Types
 | Type      | Size                             | Example  |
 |-----------|----------------------------------|----------|
@@ -89,6 +103,8 @@ Cannot be a **reserved keyword** (e.g., `int`, `class`).
 Numeric types also include `long`, `short`, `byte`, `decimal`, etc.
 `decimal` needs `m`/`M` suffix; `float` needs `f`/`F`; `double` can use `d`/`D` (optional, it's the default).
 
+
+
 8. Type Casting
 **Implicit** (automatic) — safe, no data loss (small → large type):
 int myInt = 9;
@@ -97,79 +113,65 @@ double myDouble = myInt; // int -> double automatically
 **Explicit** (manual) — needed when data may be lost (large → small type):
 double myDouble = 9.78;
 int myInt = (int) myDouble; // double -> int
-ddddddddddddddddddddddddddddddddddddddddddd
-- **Conversion methods** (convert between types, incl. to/from string):
-```csharp
+
+**Conversion methods** (convert between types, incl. to/from string):
 Convert.ToString(25);
 Convert.ToDouble("25");
 Convert.ToInt32("25");
 Convert.ToInt64("25");
-```
 
----
 
-## 9. User Input
-```csharp
+
+9. User Input
 Console.WriteLine("Enter your name:");
 string name = Console.ReadLine();
 Console.WriteLine("Hello " + name);
-```
-- `Console.ReadLine()` always returns a **string** — use `Convert.ToInt32()` etc. to read numbers.
+`Console.ReadLine()` always returns a **string** — use `Convert.ToInt32()` etc. to read numbers.
 
----
 
-## 10. Operators
 
-### Arithmetic
+10. Operators
+
+Arithmetic
 `+`  `-`  `*`  `/`  `%` (modulus)
 
-### Assignment
+Assignment
 `=`  `+=`  `-=`  `*=`  `/=`  `%=`  `&=`  `|=`  `^=`  `>>=`  `<<=`
 
-### Comparison
+Comparison
 `==`  `!=`  `>`  `<`  `>=`  `<=`
 
-### Logical
+Logical
 `&&` (and) `||` (or) `!` (not)
 
----
 
-## 11. Math
-```csharp
+
+11. Math
 Math.Max(x, y);
 Math.Min(x, y);
 Math.Sqrt(64);
 Math.Abs(-4.7);
 Math.PI;
 Math.Round(9.99);
-```
 
----
 
-## 12. Strings
 
-### Basics
-```csharp
+12. Strings
+Basics
 string greeting = "Hello";
-```
 
-### Concatenation
-```csharp
+Concatenation
 string firstName = "John";
 string lastName = "Doe";
 string name = firstName + " " + lastName;
 // or
 string name2 = String.Concat(firstName, lastName);
-```
 
-### Interpolation (`$`)
-```csharp
+Interpolation (`$`)
 string name = "John";
 string greeting = $"Hello, my name is {name}!";
-```
 
-### Access / Special Methods
-```csharp
+Access / Special Methods
 string myString = "Hello";
 Console.WriteLine(myString.Length);       // length
 Console.WriteLine(myString.ToUpper());

@@ -1110,14 +1110,14 @@ print(sudokuu(sudoku2))
 
 # https://programming-26.mooc.fi/part-5/2-references
 # Programming exercise: Items multiplied by two
-
+'''
 def doubler(lis1: list):
-    lis2 = []
     for a in lis1:
         lis2.append(a * 2)
-    return lis2
+   return lis2 
 
 numbers = [2, 4, 5, 3, 11, -4]
 numbers_doubled = doubler(numbers)
 print("original:", numbers)
 print("doubled:", numbers_doubled)
+'''
