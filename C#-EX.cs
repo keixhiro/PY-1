@@ -6,8 +6,19 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            Console.WriteLine("The length of the txt string is: " + txt.Length);
+            int day = 1;
+            switch (day)
+                {
+                    case 1:
+                        Console.WriteLine("Monday");
+                        break;
+                    case 2:
+                     Console.WriteLine("Tuesday");
+                        break;
+                    default:
+                        Console.WriteLine("Not a listed day");
+                        break;
+}
         }   
 
 
