@@ -389,3 +389,416 @@ for (int i = 0; i < numbers.GetLength(0); i++)      // rows
     Console.WriteLine(numbers[i, j]);
   }
 }
+
+
+
+# C# Cheat Sheet — Methods to Exceptions
+*(Covers w3schools.com/cs from "C# Methods" through "C# Exceptions")*
+
+
+
+1. Methods
+static void MyMethod()
+{
+  Console.WriteLine("I just got executed!");
+}
+
+static void Main(string[] args)
+{
+  MyMethod();   // call the method
+}
+
+A method is a block of code that only runs when called.
+`static void MethodName() { }` — basic declaration.
+
+
+
+2. Method Parameters
+Parameters
+static void MyMethod(string fname, int age)
+{
+  Console.WriteLine(fname + " Refsnes, " + age);
+}
+static void Main(string[] args)
+{
+  MyMethod("Liam", 5);
+  MyMethod("Jenny", 9);
+}
+Parameters go inside `()`; multiple parameters are comma-separated: `MyMethod(string fname, int age)`.
+**Parameter** = the variable listed in the method definition; **Argument** = the value passed in when calling.
+
+Default Parameter Value
+static void MyMethod(string country = "Norway")
+{
+  Console.WriteLine(country);
+}
+static void Main(string[] args)
+{
+  MyMethod("Sweden");
+  MyMethod();          // uses default "Norway"
+}
+
+Return Values
+
+static int MyMethod(int x)
+{
+  return 5 + x;
+}
+static void Main(string[] args)
+{
+  Console.WriteLine(MyMethod(3));   // 8
+}
+```dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+- `void` = no return value. Any other type (e.g. `int`, `string`) requires a `return` statement.
+
+### Named Arguments
+```csharp
+static void MyMethod(string child1, string child2, string child3)
+{
+  Console.WriteLine(child1 + " " + child2 + " " + child3);
+}
+static void Main(string[] args)
+{
+  MyMethod(child3: "Anne", child1: "John", child2: "Liz");
+  // order doesn't matter when arguments are named
+}
+```
+
+---
+
+## 3. Method Overloading
+```csharp
+static int PlusMethod(int x, int y) { return x + y; }
+static double PlusMethod(double x, double y) { return x + y; }
+
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethod(8, 5);
+  double myNum2 = PlusMethod(4.3, 6.26);
+}
+```
+- Multiple methods can share the same name if their **parameter lists differ** (type/number).
+
+---
+
+## 4. OOP (Object-Oriented Programming)
+- Core concepts: **Class**, **Object**, **Encapsulation**, **Inheritance**, **Polymorphism**, **Abstraction**.
+- Benefits: faster/easier to code, more maintainable, reusable, and secure.
+
+---
+
+## 5. Classes and Objects
+
+```csharp
+class Car
+{
+  public string color = "red";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.color);   // red
+  }
+}
+```
+- A **class** is a template for objects; an **object** is an instance of a class.
+
+### Multiple Objects
+```csharp
+Car obj1 = new Car();
+obj1.color = "red";
+
+Car obj2 = new Car();
+obj2.color = "blue";
+```
+- Each object has its own copy of the class's fields, independent of others.
+
+---
+
+## 6. Class Members
+- **Fields** (variables inside a class) and **methods** (functions inside a class) are collectively called **class members**.
+```csharp
+class Car
+{
+  public string model = "Mustang";   // field
+  public static void Honk()          // method
+  {
+    Console.WriteLine("Tuut, tuut!");
+  }
+}
+```
+
+---
+
+## 7. Constructors
+```csharp
+class Car
+{
+  public string model;
+  public Car(string modelName)   // constructor
+  {
+    model = modelName;
+  }
+}
+static void Main(string[] args)
+{
+  Car myObj = new Car("Mustang");
+  Console.WriteLine(myObj.model);   // Mustang
+}
+```
+- A constructor has the **same name as the class** and no return type.
+- Runs automatically when an object is created; commonly used to set initial values for fields.
+
+---
+
+## 8. Access Modifiers
+| Modifier | Description |
+|---|---|
+| `public` | accessible from anywhere |
+| `private` | accessible only within the same class (default if unspecified) |
+| `protected` | accessible within the class and by derived classes |
+| `internal` | accessible only within the same assembly/project |
+
+```csharp
+class Car
+{
+  private string model = "Mustang";  // only accessible inside Car
+}
+```
+
+---
+
+## 9. Properties
+```csharp
+class Person
+{
+  private string name;    // private field ("backing field")
+
+  public string Name      // public property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+static void Main(string[] args)
+{
+  Person myObj = new Person();
+  myObj.Name = "Liam";
+  Console.WriteLine(myObj.Name);
+}
+```
+- Properties provide controlled access (get/set) to private fields — a form of **encapsulation**.
+
+### Auto-Implemented Properties (shorthand)
+```csharp
+class Person
+{
+  public string Name { get; set; }   // no backing field needed
+}
+```
+
+---
+
+## 10. Inheritance
+```csharp
+class Vehicle          // base class (parent)
+{
+  public string brand = "Ford";
+  public void Honk() { Console.WriteLine("Tuut, tuut!"); }
+}
+
+class Car : Vehicle    // derived class (child)
+{
+  public string modelName = "Mustang";
+}
+
+static void Main(string[] args)
+{
+  Car myCar = new Car();
+  myCar.Honk();                    // inherited from Vehicle
+  Console.WriteLine(myCar.brand + " " + myCar.modelName);
+}
+```
+- `: ` denotes inheritance — `class Child : Parent`.
+- Use `sealed` before `class` to prevent a class from being inherited: `sealed class Vehicle { }`
+
+---
+
+## 11. Polymorphism
+```csharp
+class Animal
+{
+  public virtual void animalSound() { Console.WriteLine("The animal makes a sound"); }
+}
+class Pig : Animal
+{
+  public override void animalSound() { Console.WriteLine("The pig says: wee wee"); }
+}
+class Dog : Animal
+{
+  public override void animalSound() { Console.WriteLine("The dog says: bow wow"); }
+}
+
+static void Main(string[] args)
+{
+  Animal myAnimal = new Animal();
+  Animal myPig = new Pig();
+  Animal myDog = new Dog();
+
+  myAnimal.animalSound();
+  myPig.animalSound();
+  myDog.animalSound();
+}
+```
+- `virtual` (base class) + `override` (derived class) let a child class provide its own version of an inherited method.
+
+---
+
+## 12. Abstraction
+```csharp
+abstract class Animal
+{
+  public abstract void animalSound();   // no body — must be overridden
+  public void sleep() { Console.WriteLine("Zzz"); }   // regular method
+}
+
+class Pig : Animal
+{
+  public override void animalSound() { Console.WriteLine("The pig says: wee wee"); }
+}
+```
+- `abstract class` **cannot be instantiated** (`new Animal()` is not allowed).
+- `abstract` methods have no body and **must** be overridden in a derived (non-abstract) class.
+- Used to hide unnecessary implementation details and only expose essentials.
+
+---
+
+## 13. Interface
+```csharp
+interface IAnimal        // interface names conventionally start with "I"
+{
+  void animalSound();    // no body; implicitly public/abstract
+}
+
+class Pig : IAnimal
+{
+  public void animalSound() { Console.WriteLine("The pig says: wee wee"); }
+}
+```
+- All interface members are implicitly `public` and `abstract`; a class **must** implement every method.
+- Use `:` for a class to implement an interface (same syntax as inheritance).
+- Unlike `abstract class`, an interface can't contain fields, constructors, or method bodies.
+
+### Multiple Interfaces
+```csharp
+interface IFirstInterface { void myMethod(); }
+interface ISecondInterface { void myOtherMethod(); }
+
+class DemoClass : IFirstInterface, ISecondInterface
+{
+  public void myMethod() { Console.WriteLine("Some text.."); }
+  public void myOtherMethod() { Console.WriteLine("Some other text..."); }
+}
+```
+- A class **can** implement multiple interfaces (comma-separated) — unlike single-class inheritance.
+
+---
+
+## 14. Enums
+```csharp
+enum Level
+{
+  Low,      // 0
+  Medium,   // 1
+  High      // 2
+}
+static void Main(string[] args)
+{
+  Level myVar = Level.Medium;
+  Console.WriteLine(myVar);            // Medium
+  Console.WriteLine((int)myVar);       // 1
+}
+```
+- `enum` = a special "class" for a set of named constants; underlying values default to `int`, starting at 0.
+- Often used inside a `switch` statement to check corresponding values.
+
+---
+
+## 15. Files
+```csharp
+using System.IO;
+
+// Write to a file (creates or overwrites)
+string writeText = "Hello World!";
+File.WriteAllText("filename.txt", writeText);
+
+// Read from a file
+string readText = File.ReadAllText("filename.txt");
+Console.WriteLine(readText);
+
+// Delete a file
+File.Delete("filename.txt");
+
+// Check if a file exists
+if (File.Exists("filename.txt")) { /* ... */ }
+
+// Create a file/directory
+File.Create("filename.txt");
+Directory.CreateDirectory("MyDirectory");
+```
+- Requires `using System.IO;`.
+- Common `File` methods: `WriteAllText()`, `ReadAllText()`, `Delete()`, `Exists()`, `Create()`.
+
+---
+
+## 16. Exceptions (Try...Catch)
+
+```csharp
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);   // triggers an error
+}
+catch (Exception e)
+{
+  Console.WriteLine(e.Message);       // or your own custom message
+}
+finally
+{
+  Console.WriteLine("The 'try catch' is finished.");
+}
+```
+- `try` — code to test for errors.
+- `catch (Exception e)` — code that runs if an error occurs; `e.Message` gives the built-in error description.
+- `finally` — always runs after try/catch, regardless of outcome.
+
+### The `throw` Keyword
+```csharp
+static void checkAge(int age)
+{
+  if (age < 18)
+  {
+    throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+  }
+  else
+  {
+    Console.WriteLine("Access granted - You are old enough!");
+  }
+}
+```
+- `throw` raises a custom exception, paired with a built-in exception class (`ArithmeticException`, `FileNotFoundException`, `IndexOutOfRangeException`, `TimeOutException`, etc.).
+
+---
+
+### Quick Reference: Common Gotchas
+- `void` methods return nothing; any other return type **must** `return` a value of that type.
+- Overloading = same method name, **different parameter signature**.
+- Constructor name **must exactly match** the class name, no return type (not even `void`).
+- `private` is the default access level if you omit a modifier.
+- `abstract class` can mix implemented + abstract methods; `interface` cannot implement any method body.
+- A class can inherit from only **one** base class, but implement **multiple** interfaces.
+- `virtual`/`override` pair enables polymorphism; without `virtual`, a derived method just hides the base one.
+- Always wrap risky code (file access, array bounds, parsing) in `try/catch` to avoid crashing the program.

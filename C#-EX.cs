@@ -4,14 +4,14 @@ namespace HelloWorld
 {
     class Program
     {
+        static void MyMethod(string fname, int age)
+        {
+            Console.WriteLine(fname + " Refsnes, " + age);
+        }
         static void Main(string[] args)
         {
-            string firstName = "John";
-            string lastName = "Doe";
-            string name2 = String.Concat(firstName, lastName);
-            Console.WriteLine(name2);
-        }   
-
-
+            MyMethod("Liam", 5);
+            MyMethod("Jenny", 9);
+        }
     }
 }
