@@ -11,7 +11,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             MyMethod("Liam", 5);
-            MyMethod("Jenny", 9);
+            MyMethod("Jenny", 10);
         }
     }
 }
