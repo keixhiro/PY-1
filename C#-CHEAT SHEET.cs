@@ -448,7 +448,7 @@ static void Main(string[] args)
 {
   Console.WriteLine(MyMethod(3));   // 8
 }
-```dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+```ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 - `void` = no return value. Any other type (e.g. `int`, `string`) requires a `return` statement.
 
 ### Named Arguments
