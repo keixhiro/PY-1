@@ -1,8 +1,6 @@
 C# Cheat Sheet — Intro to Arrays
 *(Covers w3schools.com/cs from "C# Intro" through "C# Arrays")*
 
-
-
 1. Introduction
 C# ("C-Sharp") is an **object-oriented** language created by Microsoft, runs on the **.NET Framework**.
 Related to C, C++, and Java.
@@ -27,6 +25,8 @@ namespace HelloWorld
         }
     }
 }
+
+
 
 3. Output
 Console.WriteLine("Text");  // prints text and moves to a new line
@@ -394,8 +394,6 @@ for (int i = 0; i < numbers.GetLength(0); i++)      // rows
 
 # C# Cheat Sheet — Methods to Exceptions
 *(Covers w3schools.com/cs from "C# Methods" through "C# Exceptions")*
-
-
 
 1. Methods
 static void MyMethod()
