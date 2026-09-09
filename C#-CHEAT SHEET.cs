@@ -12,6 +12,7 @@ Used for: mobile apps, desktop apps, web apps/services, games, VR, databases, et
 Typical tools: **Visual Studio**, **Visual Studio Code**, or an online compiler.
 Minimal program (top-level statements, modern C#):
 Console.WriteLine("Hello World!");
+
 Traditional structure:
 using System;
 
@@ -31,6 +32,7 @@ namespace HelloWorld
 3. Output
 Console.WriteLine("Text");  // prints text and moves to a new line
 Console.Write("Text");      // prints text, no new line
+
 You can chain multiple `Write`/`WriteLine` calls; use `\n` for manual new lines inside a string.
 
 
@@ -115,6 +117,7 @@ Convert.ToInt64("25");
 Console.WriteLine("Enter your name:");
 string name = Console.ReadLine();
 Console.WriteLine("Hello " + name);
+
 `Console.ReadLine()` always returns a **string** — use `Convert.ToInt32()` etc. to read numbers.
 
 
@@ -172,6 +175,7 @@ Console.WriteLine(myString[0]);           // access a character by index
 
 string txt = "Please locate where 'locate' occurs!";
 Console.WriteLine(txt.IndexOf("locate"));
+
 string a = "Hello";
 string b = "World";
 Console.WriteLine(String.Concat(a, b));
@@ -203,6 +207,7 @@ Special Characters (escape sequences)
 bool isCSharpFun = true;
 bool isFishTasty = false;
 Console.WriteLine(10 > 9);  // returns true
+
 Any expression returning `true`/`false` is boolean; used heavily in conditions.
 
 
@@ -381,7 +386,6 @@ foreach (int i in numbers)
 
 **Nested `for`** (needed when you care about row/column position):
 int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
-
 for (int i = 0; i < numbers.GetLength(0); i++)      // rows
 {
   for (int j = 0; j < numbers.GetLength(1); j++)    // columns
@@ -422,6 +426,7 @@ static void Main(string[] args)
   MyMethod("Liam", 5);
   MyMethod("Jenny", 9);
 }
+
 Parameters go inside `()`; multiple parameters are comma-separated: `MyMethod(string fname, int age)`.
 **Parameter** = the variable listed in the method definition; **Argument** = the value passed in when calling.
 
@@ -445,6 +450,7 @@ static void Main(string[] args)
 {
   Console.WriteLine(MyMethod(3));   // 8
 }
+
 `void` = no return value. Any other type (e.g. `int`, `string`) requires a `return` statement.
 
 Named Arguments
@@ -469,6 +475,7 @@ static void Main(string[] args)
   int myNum1 = PlusMethod(8, 5);
   double myNum2 = PlusMethod(4.3, 6.26);
 }
+
 Multiple methods can share the same name if their **parameter lists differ** (type/number).
 
 
