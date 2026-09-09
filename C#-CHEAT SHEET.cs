@@ -439,7 +439,6 @@ static void Main(string[] args)
 }
 
 Return Values
-
 static int MyMethod(int x)
 {
   return 5 + x;
@@ -448,11 +447,9 @@ static void Main(string[] args)
 {
   Console.WriteLine(MyMethod(3));   // 8
 }
-```ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-- `void` = no return value. Any other type (e.g. `int`, `string`) requires a `return` statement.
+`void` = no return value. Any other type (e.g. `int`, `string`) requires a `return` statement.
 
-### Named Arguments
-```csharp
+Named Arguments
 static void MyMethod(string child1, string child2, string child3)
 {
   Console.WriteLine(child1 + " " + child2 + " " + child3);
@@ -462,12 +459,10 @@ static void Main(string[] args)
   MyMethod(child3: "Anne", child1: "John", child2: "Liz");
   // order doesn't matter when arguments are named
 }
-```
 
----
 
-## 3. Method Overloading
-```csharp
+
+3. Method Overloading
 static int PlusMethod(int x, int y) { return x + y; }
 static double PlusMethod(double x, double y) { return x + y; }
 
@@ -476,10 +471,9 @@ static void Main(string[] args)
   int myNum1 = PlusMethod(8, 5);
   double myNum2 = PlusMethod(4.3, 6.26);
 }
-```
-- Multiple methods can share the same name if their **parameter lists differ** (type/number).
+Multiple methods can share the same name if their **parameter lists differ** (type/number).
 
----
+
 
 ## 4. OOP (Object-Oriented Programming)
 - Core concepts: **Class**, **Object**, **Encapsulation**, **Inheritance**, **Polymorphism**, **Abstraction**.
