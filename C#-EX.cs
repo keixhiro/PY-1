@@ -6,10 +6,12 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string firstName = "John";
-            string lastName = "Doe";
-            string name2 = String.Concat(firstName, lastName);
-            Console.WriteLine(name2);
+            Console.WriteLine("Enter your name:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Hello " + name);
+            int name1 = Convert.ToInt32(name);
+            int y = 587 + name1;
+            Console.WriteLine(y);
         }
     }
 }
