@@ -7,21 +7,21 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Give me a number: ");
-            String stringg = (Console.ReadLine());
-            lengthh = Convert.ToInt32(stringg);
-            int length = lengthh.Length;
-            int reverse = "";
-            reversee = Convert.ToString(reverse);
+            String str = (Console.ReadLine());
+            int length = str.Length;
+            string rev = "";
 
-            for(int i = length; i >= 1; i--)
+            for(int i = length - 1; i >= 0; i--)
             {
-                int reverse += lengthh[i];
+                rev += str[i];
             }
-            if reversee == lengthh
+            if (rev == str)
             {
                 Console.WriteLine("Palindrome indeed");
-            }            
+            } else
+            {
+                Console.WriteLine("Ehh.");
+            }
         }
     }
 }
-
