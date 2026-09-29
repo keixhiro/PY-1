@@ -480,6 +480,13 @@ Multiple methods can share the same name if their **parameter lists differ** (ty
 
 
 
+
+
+
+
+
+
+
 ## 4. OOP (Object-Oriented Programming)
 - Core concepts: **Class**, **Object**, **Encapsulation**, **Inheritance**, **Polymorphism**, **Abstraction**.
 - Benefits: faster/easier to code, more maintainable, reusable, and secure.
