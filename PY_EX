@@ -62,16 +62,15 @@ while def_pin != pin:
 '''
 year = int(input("Year: "))
 
-leap_year = yea + 1
+leap_year = year + 1
 
 while True:
-    if (nex_year % 4 == 0):
+    if (leap_year % 4 == 0):
         print("The next leap year after", year, "is", leap_year)
         break
 
     leap_year += 1
 '''
-
 # https://programming-26.mooc.fi/part-2/4-simple-loops
 # Programming exercise: Story
 '''
@@ -91,7 +90,7 @@ while True:
     prev_wor = wor
 print(sent)
 '''
-
+dito tumigil
 # https://programming-26.mooc.fi/part-3/2-working-with-strings
 # Programming exercise: Find all the substrings
 '''
@@ -1114,12 +1113,13 @@ print(sudokuu(sudoku2))
 def doubler(lis1: list):
     for a in lis1:
         lis2.append(a * 2)
-   return lis2 
+    return lis2 
 
 numbers = [2, 4, 5, 3, 11, -4]
 numbers_doubled = doubler(numbers)
 print("original:", numbers)
 print("doubled:", numbers_doubled)
 '''
-
-I'm back
+'''
+I'm back, fr
+'''
