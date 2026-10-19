@@ -90,7 +90,7 @@ while True:
     prev_wor = wor
 print(sent)
 '''
-dito tumigil
+
 # https://programming-26.mooc.fi/part-3/2-working-with-strings
 # Programming exercise: Find all the substrings
 '''
@@ -1121,5 +1121,5 @@ print("original:", numbers)
 print("doubled:", numbers_doubled)
 '''
 '''
-I'm back, fr
+nvm
 '''
